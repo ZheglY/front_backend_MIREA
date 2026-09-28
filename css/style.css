@@ -43,6 +43,15 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: var(--space-xs);
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -111,6 +120,26 @@ a:focus-visible {
 /* ===============================
    4. Компоненты страницы
    =============================== */
+
+.breadcrumbs {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-md);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.breadcrumbs a {
+  color: var(--color-primary);
+}
+
+.breadcrumbs span::before {
+  content: " / ";
+  color: var(--color-muted);
+}
+
+.breadcrumbs a:hover {
+  color: var(--color-primary-dark);
+}
 
 .hero {
   max-width: var(--container-width);
