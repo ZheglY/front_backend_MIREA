@@ -77,3 +77,66 @@ orderForm.addEventListener('submit', (event) => {
   // Закрываем модальное окно.
   orderDialog.close();
 });
+
+// ==========================================================================
+// Обработка формы на странице order.html
+// ==========================================================================
+
+const orderPageForm = document.getElementById('order-page-form');
+const orderPageSuccessMessage = document.getElementById('order-page-success');
+
+if (orderPageForm) {
+    orderPageForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Отменяем стандартную отправку
+
+        // Сбрасываем предыдущие признаки ошибок
+        const formElements = Array.from(orderPageForm.elements);
+        formElements.forEach((element) => {
+            if (element.willValidate) {
+                element.removeAttribute('aria-invalid');
+            }
+        });
+
+        // Проверяем встроенные HTML-ограничения формы
+        if (!orderPageForm.checkValidity()) {
+            formElements.forEach((element) => {
+                if (element.willValidate && !element.checkValidity()) {
+                    element.setAttribute('aria-invalid', 'true');
+                }
+            });
+            orderPageForm.reportValidity(); // Показываем стандартные сообщения браузера
+            return;
+        }
+
+        // Показываем сообщение об успешной отправке
+        orderPageSuccessMessage.hidden = false;
+        // Очищаем форму
+        orderPageForm.reset();
+    });
+}
+
+// ==========================================================================
+// Кнопка "Наверх" (Fixed позиционирование)
+// ==========================================================================
+
+const scrollToTopButton = document.createElement('button');
+scrollToTopButton.textContent = '↑';
+scrollToTopButton.className = 'scroll-to-top';
+scrollToTopButton.setAttribute('aria-label', 'Наверх');
+document.body.appendChild(scrollToTopButton);
+
+scrollToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Скрываем кнопку, если страница не прокручена
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollToTopButton.style.display = 'block';
+    } else {
+        scrollToTopButton.style.display = 'none';
+    }
+});
+
+// Изначально скрываем кнопку
+scrollToTopButton.style.display = 'none';

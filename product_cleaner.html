@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Страница товара в учебном интернет-магазине">
+    <title>Название товара — Учебный интернет-магазин</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="site-header">
+            <a class="site-logo" href="index.html">ShopProject</a>
+
+            <nav class="site-nav" aria-label="Основная навигация">
+                <ul class="site-nav__list">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="order.html">Оформить заявку</a></li> <!-- Добавлена ссылка на заявку -->
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="index.html#advantages">Преимущества</a></li>
+                    <li><a href="index.html#popular">Популярные товары</a></li>
+                    <li><a href="index.html#contacts">Обратная связь</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Приведено к стилю contacts.html (nav вместо div) -->
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Каталог</a>
+            <span>Название товара</span>
+        </nav>
+
+        <section class="product-detail">
+            <div class="product-detail__image-wrapper">
+                <!-- Заменена битая ссылка на рабочую заглушку, чтобы сетка не ломалась -->
+                <img src="images/cleaner.png" alt="Изображение товара" class="product-detail__image">
+                <span class="product-detail__badge product-detail__badge--new">Новинка</span>
+            </div>
+            <div class="product-detail__info">
+                <h1 class="product-detail__title">Современный пылесос CyberEye 2.0</h1>
+                <p class="product-detail__price">Цена: 5.000 руб.</p>
+                <p class="product-detail__description">
+                    Умный пылесос «CyberEye 2.0»! Это не просто прибор для уборки, а полноценный член семьи с искусственным интеллектом. Оснащён продвинутой оптической системой из двух сенсоров, которые смотрят прямо вам в душу, пока вы пытаетесь пропылесосить ковёр. Его инновационный хобот-манипулятор способен дотянуться до самых труднодоступных углов, а стильная чёрная шляпа-антенна обеспечивает постоянную связь с космосом
+                </p>
+                <a href="order.html" class="button product-detail__button">Оформить заявку</a>
+            </div>
+        </section>
+
+        <section class="product-specs section">
+            <h2>Характеристики</h2>
+            <table class="specs-table">
+                <caption>Технические характеристики товара</caption>
+                <thead>
+                    <tr>
+                        <th>Параметр</th>
+                        <th>Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Материал</td>
+                        <td>чугун от тракторного мотора</td>
+                    </tr>
+                    <tr>
+                        <td>Вес</td>
+                        <td>70 кг</td>
+                    </tr>
+                    <tr>
+                        <td>Габариты</td>
+                        <td>20x15x10 см</td>
+                    </tr>
+                    <tr>
+                        <td>Гарантия</td>
+                        <td>на всю жизнь</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Убран лишний класс site-footer, чтобы соответствовать index.html и contacts.html -->
+    <footer>
+        <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+        <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

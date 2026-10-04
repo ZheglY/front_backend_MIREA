@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Страница оформления заявки в учебном интернет-магазине">
+    <title>Оформление заявки — Учебный интернет-магазин</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="site-header">
+            <a class="site-logo" href="index.html">ShopProject</a>
+
+            <nav class="site-nav" aria-label="Основная навигация">
+                <ul class="site-nav__list">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="order.html">Оформить заявку</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="index.html#advantages">Преимущества</a></li>
+                    <li><a href="index.html#popular">Популярные товары</a></li>
+                    <li><a href="index.html#contacts">Обратная связь</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Приведено к стилю contacts.html (nav вместо div) -->
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <a href="index.html">Главная</a>
+            <span>Оформление заявки</span>
+        </nav>
+
+        <section class="order-page">
+            <h1 class="order-page__title">Оформление заявки</h1>
+            <p class="order-page__intro">Заполните форму, и мы свяжемся с вами для уточнения деталей.</p>
+
+            <form id="order-page-form" class="order-form" novalidate>
+                <div class="order-form__group">
+                    <label for="order-name" class="order-form__label">Имя <span class="order-form__required">*</span></label>
+                    <input type="text" id="order-name" name="name" class="order-form__input" placeholder="Ваше имя" required>
+                </div>
+
+                <div class="order-form__group">
+                    <label for="order-email" class="order-form__label">E-mail <span class="order-form__required">*</span></label>
+                    <input type="email" id="order-email" name="email" class="order-form__input" placeholder="you@example.com" required>
+                </div>
+
+                <div class="order-form__group">
+                    <label for="order-phone" class="order-form__label">Телефон</label>
+                    <input type="tel" id="order-phone" name="phone" class="order-form__input" placeholder="+7 (900) 000-00-00" pattern="\+7\s?\([0-9]{3}\)\s?[0-9]{3}-[0-9]{2}-[0-9]{2}">
+                </div>
+
+                <div class="order-form__group">
+                    <label for="order-topic" class="order-form__label">Тема заявки</label>
+                    <select id="order-topic" name="topic" class="order-form__select">
+                        <option value="">Выберите тему</option>
+                        <option value="order">Заказ товара</option>
+                        <option value="consultation">Консультация</option>
+                        <option value="delivery">Доставка</option>
+                    </select>
+                </div>
+
+                <div class="order-form__group">
+                    <label for="order-comment" class="order-form__label">Комментарий</label>
+                    <textarea id="order-comment" name="comment" class="order-form__textarea" rows="4" placeholder="Ваши пожелания или вопросы"></textarea>
+                </div>
+
+                <div class="order-form__group order-form__group--checkbox">
+                    <input type="checkbox" id="order-agreement" name="agreement" class="order-form__checkbox" required>
+                    <label for="order-agreement" class="order-form__label order-form__label--checkbox">Я согласен на обработку персональных данных</label>
+                </div>
+
+                <div class="order-form__actions">
+                    <button type="submit" class="button order-form__button">Отправить заявку</button>
+                </div>
+            </form>
+
+            <div id="order-page-success" class="order-success-message" hidden>
+                <p>Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+        <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
