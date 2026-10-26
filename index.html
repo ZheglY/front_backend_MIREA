@@ -8,13 +8,13 @@
 <title>Хороший звук. В вашем ритме — ритм.</title>
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="css/custom.css?v=20261026-carousel">
+<link rel="stylesheet" href="css/custom.css?v=20261026-cart-panel">
 <script src="vendor/bootstrap/bootstrap.bundle.min.js" defer>
 </script>
-<script src="js/products.js?v=20261026-carousel" defer>
+<script src="js/products.js?v=20261026-cart-panel" defer>
 </script>
-<script src="js/cart.js?v=20261026-carousel" defer></script>
-<script src="js/main.js?v=20261026-carousel" defer>
+<script src="js/cart.js?v=20261026-cart-panel" defer></script>
+<script src="js/main.js?v=20261026-cart-panel" defer>
 </script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Хороший звук. В вашем ритме — ритм.">
@@ -30,11 +30,17 @@
 <nav class="navbar navbar-expand-lg container" aria-label="Основная навигация">
 <a class="navbar-brand" href="index.html" aria-label="Ритм — главная">ритм<span class="brand-dot">.</span>
 </a>
+<a aria-label="Открыть корзину" class="cart-link ms-auto me-3 me-lg-0 order-lg-3" href="order.html">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M5 7h14l1 14H4L5 7Z"/>
+<path d="M8 8V6a4 4 0 0 1 8 0v2"/>
+</svg><span class="cart-label">Корзина</span> <span class="cart-count" data-cart-count aria-label="Количество товаров">0</span>
+</a>
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Открыть меню">
 <span class="navbar-toggler-icon">
 </span>
 </button>
-<div class="collapse navbar-collapse" id="main-nav">
+<div class="collapse navbar-collapse order-lg-2" id="main-nav">
 <ul class="navbar-nav mx-auto">
 <li class="nav-item">
 <a class="nav-link active" aria-current="page" href="index.html">Главная</a>
@@ -49,12 +55,7 @@
 <a class="nav-link "  href="contacts.html">Контакты</a>
 </li>
 </ul>
-<a class="cart-link" href="order.html">
-<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-<path d="M5 7h14l1 14H4L5 7Z"/>
-<path d="M8 8V6a4 4 0 0 1 8 0v2"/>
-</svg> Корзина <span class="cart-count" data-cart-count aria-label="Количество товаров">0</span>
-</a>
+
 </div>
 </nav>
 </header>
@@ -204,6 +205,22 @@
 </button>
 </div>
 </div>
+</div>
+<div class="offcanvas offcanvas-end cart-drawer" tabindex="-1" id="cart-drawer" aria-labelledby="cart-drawer-title">
+  <div class="offcanvas-header"><h2 class="offcanvas-title fs-4" id="cart-drawer-title">Ваша корзина</h2><button class="btn-close" type="button" data-bs-dismiss="offcanvas" aria-label="Закрыть корзину"></button></div>
+  <div class="offcanvas-body d-flex flex-column">
+    <p class="cart-added-status small" id="cart-added-status" role="status"></p>
+    <div id="drawer-empty" class="text-secondary" hidden>Корзина пуста. Выберите товар в каталоге.</div>
+    <div id="drawer-filled" class="d-flex flex-column flex-grow-1">
+      <ul class="list-unstyled mb-4" id="drawer-items"></ul>
+      <div class="mt-auto border-top pt-4">
+        <div class="d-flex justify-content-between align-items-center gap-3"><span>Сумма товаров</span><strong class="fs-4" id="drawer-subtotal"></strong></div>
+        <p class="small text-secondary mt-2">Доставка рассчитывается при оформлении.</p>
+        <a class="btn btn-primary w-100" href="order.html" id="drawer-checkout">Оформить заявку ↗</a>
+      </div>
+    </div>
+    <button type="button" class="btn btn-outline-dark w-100 mt-3" data-bs-dismiss="offcanvas">Продолжить покупки</button>
+  </div>
 </div>
 <noscript>
 <div class="alert alert-warning m-3">Для каталога, корзины и оформления заказа включите JavaScript в браузере.</div>

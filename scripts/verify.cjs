@@ -12,6 +12,7 @@ for(const width of [1440,768,390,320]){
  for(const file of ['index.html','catalog.html','product.html?id=studio','order.html','contacts.html']){
   await page.goto(base+file);
   assert.equal(await page.locator('h1').count(),1,`${file}: one h1`);
+  assert(await page.locator('.cart-link').isVisible(),`Cart link hidden: ${file} ${width}`);
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`Overflow: ${file} ${width}`);
   await page.evaluate(()=>document.querySelectorAll('img').forEach(i=>i.loading='eager'));
   await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
@@ -31,7 +32,7 @@ assert.equal(await page.locator('#carousel-status').innerText(),'02 / 03');
 assert.equal(await page.locator('#product-carousel .carousel-item[inert]').count(),2);
 await page.locator('#product-carousel').focus();await page.keyboard.press('ArrowRight');await waitSlide('Move 03');
 await activeSlide().getByRole('button',{name:'Добавить Move 03 в корзину'}).click();
-await page.locator('.cart-link').click();assert.equal(await page.locator('.order-item').count(),1);assert.match(await page.locator('#order-items').innerText(),/Move 03/);
+await page.locator('#cart-drawer').waitFor({state:'visible'});assert.match(await page.locator('#drawer-items').innerText(),/Move 03/);await page.locator('#drawer-checkout').click();assert.equal(await page.locator('.order-item').count(),1);assert.match(await page.locator('#order-items').innerText(),/Move 03/);
 await page.getByRole('button',{name:'Удалить Move 03'}).click();
 await page.setViewportSize({width:390,height:844});await page.goto(base);
 await page.getByRole('button',{name:'Открыть меню'}).click();
@@ -47,10 +48,11 @@ await page.getByRole('button',{name:'Сбросить фильтры',exact:true
 await page.goto(base+'catalog.html?category=speakers');assert.equal(await page.locator('.product-card').count(),1);
 await page.goto(base+'product.html?id=unknown');assert.match(await page.locator('h1').innerText(),/не найден/);
 await page.goto(base+'product.html?id=air');await page.getByRole('button',{name:'Добавить в корзину'}).click();assert.equal(await page.locator('[data-cart-count]').innerText(),'1');
-await page.getByRole('link',{name:'К оформлению'}).click();assert.match(await page.locator('#subtotal').innerText(),/5\s990/);assert.match(await page.locator('#shipping').innerText(),/490/);
+await page.locator('#drawer-checkout').click();assert.match(await page.locator('#subtotal').innerText(),/5\s990/);assert.match(await page.locator('#shipping').innerText(),/490/);
 for (const width of [1440, 768, 390, 320]) {
  await page.setViewportSize({width,height:1000});
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth), `Filled checkout overflow: ${width}`);
+ if(width<992) assert(await page.evaluate(()=>document.querySelector('.checkout-panel').getBoundingClientRect().top < document.querySelector('#order-form').getBoundingClientRect().top),'Mobile basket must precede the form');
  if(width===1440||width===390) await page.screenshot({path:`.artifacts/checkout-filled-${width}.png`,fullPage:true});
 }
 await page.setViewportSize({width:1440,height:1000});
@@ -81,7 +83,7 @@ await page.getByRole('button',{name:'Удалить Studio 01'}).click();
 const restricted=await browser.newContext();
 await restricted.addInitScript(()=>{Storage.prototype.getItem=()=>{throw new DOMException('Blocked','SecurityError')};Storage.prototype.setItem=()=>{throw new DOMException('Blocked','SecurityError')};});
 const limited=await restricted.newPage();
-await limited.goto(base);await limited.locator('.carousel-item.active [data-add]').click();await limited.locator('.cart-link').click();
+await limited.goto(base);await limited.locator('.carousel-item.active [data-add]').click();await limited.locator('#drawer-checkout').click();
 assert.equal(await limited.locator('.order-item').count(),1);assert(await limited.locator('#checkout-content').isVisible());
 await limited.reload();assert.equal(await limited.locator('.order-item').count(),1);
 await limited.getByLabel('Имя *',{exact:true}).fill('Тест');await limited.getByLabel('Телефон *').fill('+7 (900) 123-45-67');await limited.getByLabel('Email *',{exact:true}).fill('test@example.com');await limited.getByLabel('Способ получения').selectOption('pickup');await limited.locator('#order-agreement').check();await limited.getByRole('button',{name:'Оформить учебный заказ'}).click();await limited.locator('#success-modal').waitFor({state:'visible'});assert.equal(await limited.locator('[data-cart-count]').innerText(),'0');

@@ -6,10 +6,12 @@
   const findProduct = id => products.find(product => product.id === id);
   let cart = window.shopCart.read();
   let renderOrderView = () => {};
+  let addTrigger = null;
   window.shopCart.subscribe(items => {
     cart = items;
     updateCount();
     renderOrderView();
+    renderCartDrawer();
   });
   function notify(message) {
     document.getElementById('cart-toast-text').textContent = message;
@@ -23,21 +25,41 @@
     window.shopCart.save(cart);
     updateCount();
   }
-  function addToCart(id) {
+  function renderCartDrawer() {
+    const selected = products.filter(product => cart[product.id]);
+    document.getElementById('drawer-empty').hidden = selected.length > 0;
+    document.getElementById('drawer-filled').hidden = selected.length === 0;
+    document.getElementById('drawer-items').innerHTML = selected.map(product => `
+      <li class="drawer-item d-flex gap-3 py-3 border-bottom">
+        <img src="images/products/${product.image}" width="72" height="72" alt="${product.name}">
+        <div class="flex-grow-1"><h3 class="fs-6 mb-1">${product.name}</h3>
+          <p class="small text-secondary mb-1">${cart[product.id]} шт. × ${money(product.price)}</p>
+          <strong>${money(product.price * cart[product.id])}</strong>
+        </div>
+      </li>`).join('');
+    document.getElementById('drawer-subtotal').textContent = money(selected.reduce((sum, product) => sum + product.price * cart[product.id], 0));
+  }
+  function addToCart(id, trigger) {
     if (!findProduct(id)) return;
     if ((cart[id] || 0) >= 99) {notify('Максимум 99 единиц одного товара.'); return;}
     cart[id] = (cart[id] || 0) + 1;
     saveCart();
-    notify(`${findProduct(id).name} — добавлено в корзину`);
+    addTrigger = trigger;
+    document.getElementById('cart-added-status').textContent = `✓ ${findProduct(id).name} добавлен в корзину`;
+    bootstrap.Offcanvas.getOrCreateInstance(document.getElementById('cart-drawer')).show();
   }
   function card(product) {
     return `<div class="col-sm-6 col-xl-4"><article class="card product-card"><a class="product-image" href="product.html?id=${product.id}" aria-label="Подробнее о ${product.name}"><img src="images/products/${product.image}" alt="${product.categoryName} ${product.name}" loading="lazy" width="800" height="640"><span class="badge product-badge">${product.badge}</span></a><div class="card-body d-flex flex-column"><span class="small-label">${product.categoryName}</span><h3 class="card-title"><a href="product.html?id=${product.id}">${product.name}</a></h3><p class="card-text">${product.short}</p><div class="d-flex justify-content-between align-items-center mt-auto"><strong class="product-price">${money(product.price)}</strong><button class="btn btn-outline-dark add-button" data-add="${product.id}" aria-label="Добавить ${product.name} в корзину">+</button></div></div></article></div>`;
   }
   document.addEventListener('click', event => {
     const button = event.target.closest('[data-add]');
-    if (button) addToCart(button.dataset.add);
+    if (button) addToCart(button.dataset.add, button);
   });
   updateCount();
+  renderCartDrawer();
+  document.getElementById('cart-drawer').addEventListener('hidden.bs.offcanvas', () => {
+    if (addTrigger?.isConnected) addTrigger.focus();
+  });
   const popular = document.getElementById('popular-products');
   if (popular) {
     popular.innerHTML = products.map((product, index) => `

@@ -789,3 +789,19 @@ button,a,input,select,textarea{
     width: 24px;
   }
 }
+/* Корзина остаётся доступной вне свёрнутого меню на телефоне. */
+.cart-link { white-space: nowrap; }
+.cart-drawer { --bs-offcanvas-width: 420px; background: var(--paper); }
+.cart-drawer .offcanvas-header { border-bottom: 1px solid var(--line); padding: 24px; }
+.cart-drawer .offcanvas-body { padding: 24px; }
+.cart-added-status { color: #406344; }
+.drawer-item img { object-fit: cover; border-radius: 6px; flex-shrink: 0; }
+.drawer-item h3 { letter-spacing: -.02em; }
+.checkout-title { font-size: clamp(2rem, 4vw, 3.6rem); }
+@media (max-width: 991.98px) {
+  .navbar-collapse { width: 100%; order: 4; }
+}
+@media (max-width: 359.98px) {
+  .cart-label { display: none; }
+  .cart-drawer .offcanvas-header, .cart-drawer .offcanvas-body { padding: 18px; }
+}
