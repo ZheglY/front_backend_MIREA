@@ -1,121 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Каталог товаров учебного интернет-магазина.">
-  <title>Каталог товаров — Учебный интернет-магазин</title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Каталог товаров — Учебный интернет-магазин">
-  <meta property="og:description" content="Каталог товаров учебного интернет-магазина.">
-  <meta property="og:url" content="https://zhegly.github.io/front_backend_MIREA/catalog.html">
-  <meta property="og:image" content="https://zhegly.github.io/front_backend_MIREA/images/preview.jpg">
-  <meta property="og:image:alt" content="Главная страница учебного интернет-магазина ShopProject">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Каталог. Ритм — учебный магазин аудиотехники: наушники, вкладыши и портативная акустика.">
+<meta name="theme-color" content="#232522">
+<title>Каталог — ритм.</title>
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="css/custom.css">
+<script src="vendor/bootstrap/bootstrap.bundle.min.js" defer>
+</script>
+<script src="js/products.js" defer>
+</script>
+<script src="js/main.js" defer>
+</script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Каталог — ритм.">
+<meta property="og:description" content="Наушники и акустика для жизни в вашем ритме. Учебный интернет-магазин.">
+<meta property="og:url" content="https://zhegly.github.io/front_backend_MIREA/catalog.html">
+<meta property="og:image" content="https://zhegly.github.io/front_backend_MIREA/images/preview.jpg">
+<meta property="og:image:alt" content="Главная страница магазина аудиотехники ритм.">
 </head>
-<body>
-  <header>
-    <div class="site-header">
-      <a class="site-logo" href="index.html">ShopProject</a>
-
-      <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="index.html#advantages">Преимущества</a></li>
-          <li><a href="index.html#popular">Популярные товары</a></li>
-          <li><a href="index.html#contacts">Обратная связь</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="index.html">Главная</a>
-      <span>Каталог</span>
-    </nav>
-
-    <section class="section">
-      <h1>Каталог товаров</h1>
-      <p>
-        На этой странице представлен учебный каталог товаров.
-        Слева расположена учебная форма фильтров, справа — товары.
-        Работа фильтрации и сортировки будет реализована позднее.
-      </p>
-    </section>
-
-    <section class="catalog-layout">
-      <aside class="catalog-filters">
-        <h2>Фильтры</h2>
-
-        <form class="filters-form" action="#" method="get">
-          <fieldset>
-            <legend>Категория</legend>
-
-            <label>
-              <input type="checkbox" name="category" value="all">
-              Все товары
-            </label>
-
-            <label>
-              <input type="checkbox" name="category" value="popular">
-              Популярные
-            </label>
-
-            <label>
-              <input type="checkbox" name="category" value="new">
-              Новинки
-            </label>
-          </fieldset>
-
-          <fieldset>
-            <legend>Цена</legend>
-
-            <label for="price-from">От</label>
-            <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
-
-            <label for="price-to">До</label>
-            <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
-          </fieldset>
-
-          <button class="button" type="submit">Применить</button>
-        </form>
-      </aside>
-
-      <section class="catalog-products">
-        <h2>Список товаров</h2>
-
-        <div class="products-grid">
-          <article class="product-card">
-            <h3>Товар 1</h3>
-            <p>Краткое описание учебного товара.</p>
-            <p>Цена: 1000 руб.</p>
-            <a class="button" href="index.html#popular">Подробнее</a>
-          </article>
-
-          <article class="product-card">
-            <h3>Товар 2</h3>
-            <p>Краткое описание учебного товара.</p>
-            <p>Цена: 1500 руб.</p>
-            <a class="button" href="index.html#popular">Подробнее</a>
-          </article>
-
-          <article class="product-card">
-            <h3>Товар 3</h3>
-            <p>Краткое описание учебного товара.</p>
-            <p>Цена: 2000 руб.</p>
-            <a class="button" href="index.html#popular">Подробнее</a>
-          </article>
-        </div>
-      </section>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
-  </footer>
+<body data-page="catalog">
+<a href="#main" class="skip-link">Перейти к содержимому</a>
+<div class="announcement">ЗВУК, КОТОРЫЙ БЛИЖЕ. &nbsp; / &nbsp; ДОСТАВКА БЕСПЛАТНО ОТ 10 000 ₽</div>
+<header class="site-header">
+<nav class="navbar navbar-expand-lg container" aria-label="Основная навигация">
+<a class="navbar-brand" href="index.html" aria-label="Ритм — главная">ритм<span class="brand-dot">.</span>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Открыть меню">
+<span class="navbar-toggler-icon">
+</span>
+</button>
+<div class="collapse navbar-collapse" id="main-nav">
+<ul class="navbar-nav mx-auto">
+<li class="nav-item">
+<a class="nav-link "  href="index.html">Главная</a>
+</li>
+<li class="nav-item">
+<a class="nav-link active" aria-current="page" href="catalog.html">Каталог</a>
+</li>
+<li class="nav-item">
+<a class="nav-link "  href="index.html#advantages">О нас</a>
+</li>
+<li class="nav-item">
+<a class="nav-link "  href="contacts.html">Контакты</a>
+</li>
+</ul>
+<a class="cart-link" href="order.html">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M5 7h14l1 14H4L5 7Z"/>
+<path d="M8 8V6a4 4 0 0 1 8 0v2"/>
+</svg> Корзина <span class="cart-count" data-cart-count aria-label="Количество товаров">0</span>
+</a>
+</div>
+</nav>
+</header>
+<main id="main">
+<nav class="container" aria-label="Хлебные крошки">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="index.html">Главная</a>
+</li>
+<li class="breadcrumb-item active" aria-current="page">Каталог</li>
+</ol>
+</nav>
+<section class="container pb-5">
+<div class="catalog-intro mb-5">
+<p class="eyebrow text-secondary">Подберите свой ритм</p>
+<h1>Коллекция звука.</h1>
+<p class="text-secondary">Для тихого утра, шумного города и любимых людей рядом.</p>
+</div>
+<div class="row gy-5 gx-4 gx-lg-5">
+<aside class="col-lg-3">
+<form id="filter-form">
+<label class="form-label" for="search">Поиск по коллекции</label>
+<input class="form-control mb-4" id="search" name="q" type="search" placeholder="Название товара">
+<fieldset class="filter-panel">
+<legend>Категория</legend>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="category" id="cat-all" value="all" checked>
+<label class="form-check-label" for="cat-all">Все товары</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="category" id="cat-headphones" value="headphones" >
+<label class="form-check-label" for="cat-headphones">Наушники</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="category" id="cat-earbuds" value="earbuds" >
+<label class="form-check-label" for="cat-earbuds">Вкладыши</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="category" id="cat-speakers" value="speakers" >
+<label class="form-check-label" for="cat-speakers">Акустика</label>
+</div>
+</fieldset>
+<div class="filter-panel mt-4">
+<label class="form-label" for="max-price">Цена до, ₽</label>
+<input id="max-price" class="form-control" type="number" min="0" step="1" placeholder="Без ограничения">
+<button type="reset" class="btn btn-link text-secondary ps-0 mt-2 small">Сбросить фильтры</button>
+</div>
+</form>
+</aside>
+<div class="col-lg-9">
+<div class="catalog-toolbar d-flex justify-content-between align-items-center">
+<span class="catalog-count" id="result-count" role="status">
+</span>
+<div class="d-flex align-items-center gap-2">
+<label class="visually-hidden" for="sort">Сортировка</label>
+<select class="form-select" id="sort">
+<option value="featured">Рекомендуем</option>
+<option value="price-asc">Сначала дешевле</option>
+<option value="price-desc">Сначала дороже</option>
+<option value="name">По названию</option>
+</select>
+</div>
+</div>
+<div class="row g-4" id="catalog-products">
+</div>
+<div class="empty-state" id="catalog-empty" hidden>
+<h2>Пока ничего не нашлось</h2>
+<p class="text-secondary">Попробуйте другой запрос или уберите ограничения.</p>
+<button class="btn btn-dark" id="clear-filters">Сбросить фильтры</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="row g-4 align-items-center">
+<div class="col-md-5">
+<a class="footer-brand text-decoration-none" href="index.html">ритм<span class="brand-dot">.</span>
+</a>
+<p class="text-secondary small mt-3 mb-0">Хороший звук. В вашем ритме.</p>
+</div>
+<div class="col-md-7 d-flex gap-4 justify-content-md-end flex-wrap small">
+<a href="catalog.html">Каталог</a>
+<a href="contacts.html">Контакты</a>
+<button class="btn btn-link p-0 text-reset small" data-bs-toggle="modal" data-bs-target="#delivery-modal">Доставка и оплата</button>
+</div>
+</div>
+<div class="footer-bottom d-flex justify-content-between flex-wrap gap-2">
+<span>© 2026 ритм. Учебный интернет-магазин.</span>
+<span>Жегль Ярослав · ЭФБО-03-25</span>
+</div>
+</div>
+</footer>
+<div class="modal fade" id="delivery-modal" tabindex="-1" aria-labelledby="delivery-title" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header border-0">
+<h2 class="modal-title" id="delivery-title">Доставка и оплата</h2>
+<button class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть">
+</button>
+</div>
+<div class="modal-body pt-0">
+<p>Курьерская доставка — 490 ₽. При сумме товаров от 10 000 ₽ — бесплатно. Самовывоз — бесплатно.</p>
+<p>Демонстрационный срок доставки: 2–4 дня. Оплата при получении.</p>
+<div class="alert alert-secondary small mb-0">Это учебный магазин: реальные заказы, оплата и доставка не выполняются. Фотографии, товары и условия используются для демонстрации интерфейса.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+<div id="cart-toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+<div class="d-flex">
+<div class="toast-body" id="cart-toast-text">Товар добавлен в корзину.</div>
+<button class="btn-close btn-close-white me-3 m-auto" data-bs-dismiss="toast" aria-label="Закрыть">
+</button>
+</div>
+</div>
+</div>
+<noscript>
+<div class="alert alert-warning m-3">Для каталога, корзины и оформления заказа включите JavaScript в браузере.</div>
+</noscript>
 </body>
 </html>

@@ -1,211 +1,202 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Главная страница учебного интернет-магазина: преимущества, популярные товары и форма заявки.">
-  <title>Главная — Учебный интернет-магазин</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Главная — Учебный интернет-магазин">
-  <meta property="og:description" content="Главная страница учебного интернет-магазина: преимущества, популярные товары и форма заявки.">
-  <meta property="og:url" content="https://zhegly.github.io/front_backend_MIREA/">
-  <meta property="og:image" content="https://zhegly.github.io/front_backend_MIREA/images/preview.jpg">
-  <meta property="og:image:alt" content="Главная страница учебного интернет-магазина ShopProject">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Хороший звук. В вашем ритме. Ритм — учебный магазин аудиотехники: наушники, вкладыши и портативная акустика.">
+<meta name="theme-color" content="#232522">
+<title>Хороший звук. В вашем ритме — ритм.</title>
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="css/custom.css">
+<script src="vendor/bootstrap/bootstrap.bundle.min.js" defer>
+</script>
+<script src="js/products.js" defer>
+</script>
+<script src="js/main.js" defer>
+</script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Хороший звук. В вашем ритме — ритм.">
+<meta property="og:description" content="Наушники и акустика для жизни в вашем ритме. Учебный интернет-магазин.">
+<meta property="og:url" content="https://zhegly.github.io/front_backend_MIREA/">
+<meta property="og:image" content="https://zhegly.github.io/front_backend_MIREA/images/preview.jpg">
+<meta property="og:image:alt" content="Главная страница магазина аудиотехники ритм.">
 </head>
-<body>
-  <header>
-    <div class="site-header">
-      <a class="site-logo" href="index.html">ShopProject</a>
-
-      <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="index.html#advantages">Преимущества</a></li>
-          <li><a href="index.html#popular">Популярные товары</a></li>
-          <li><a href="index.html#contacts">Обратная связь</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-
-    <section class="hero">
-      <h1>Учебный интернет-магазин</h1>
-      <p>
-        Это главная страница учебного интернет-магазина.
-        Посмотрите каталог товаров, познакомьтесь с преимуществами проекта
-        или оставьте заявку через форму обратной связи.
-      </p>
-      <a class="button" href="#popular">Перейти к товарам</a>
-    </section>
-
-    <section class="section" id="advantages">
-      <h2>Преимущества проекта</h2>
-
-      <ul class="advantages-list">
-        <li>понятная HTML-структура;</li>
-        <li>семантические блоки страницы;</li>
-        <li>подключение внешнего CSS-файла;</li>
-        <li>подготовка к разработке многостраничного сайта.</li>
-      </ul>
-    </section>
-
-    <section class="section" id="popular">
-      <h2>Популярные товары</h2>
-
-      <div class="products-grid">
-        <article class="product-card">
-          <h3>Товар 1</h3>
-          <p>Краткое описание учебного товара.</p>
-          <p>Цена: 1000 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 1">
-            Заказать
-          </button>
-        </article>
-
-        <article class="product-card">
-          <h3>Товар 2</h3>
-          <p>Краткое описание учебного товара.</p>
-          <p>Цена: 1500 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 2">
-            Заказать
-          </button>
-        </article>
-
-        <article class="product-card">
-          <h3>Товар 3</h3>
-          <p>Краткое описание учебного товара.</p>
-          <p>Цена: 2000 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 3">
-            Заказать
-          </button>
-        </article>
-      </div>
-    </section>
-
-    <aside class="aside-info">
-      <h2>Информация для студентов</h2>
-      <p>
-        На следующих практических занятиях этот проект будет расширяться:
-        будут доработаны карточки товаров, добавлены
-        БЭМ-структура и адаптивная версия сайта.
-      </p>
-    </aside>
-
-    <section class="section" id="contacts">
-      <h2>Обратная связь</h2>
-      <p>Оставьте учебную заявку или выберите товар в разделе популярных товаров.</p>
-      <button class="button order-dialog-trigger" type="button" data-product="Общая заявка">
-        Открыть форму заявки
-      </button>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
-  </footer>
-
-  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-    <h2 id="order-dialog-title">Оформление заявки</h2>
-
-    <form class="order-form" id="order-form" action="#" method="post" novalidate>
-      <input id="selected-product" name="selected-product" type="hidden">
-
-      <div class="form-field">
-        <label for="order-name">Имя</label>
-        <input
-          id="order-name"
-          name="name"
-          type="text"
-          placeholder="Введите ваше имя"
-          minlength="2"
-          autocomplete="given-name"
-          required
-        >
-      </div>
-
-      <div class="form-field">
-        <label for="order-email">E-mail</label>
-        <input
-          id="order-email"
-          name="email"
-          type="email"
-          placeholder="example@mail.ru"
-          autocomplete="email"
-          required
-        >
-      </div>
-
-      <div class="form-field">
-        <label for="order-phone">Телефон</label>
-        <input
-          id="order-phone"
-          name="phone"
-          type="tel"
-          inputmode="tel"
-          placeholder="+7 (900) 000-00-00"
-          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-          required
-        >
-        <small>Формат: +7 (900) 000-00-00</small>
-      </div>
-
-      <div class="form-field">
-        <label for="order-date">Дата связи</label>
-        <input
-          id="order-date"
-          name="date"
-          type="date"
-        >
-      </div>
-
-      <div class="form-field">
-        <label for="order-topic">Тема заявки</label>
-        <select id="order-topic" name="topic" required>
-          <option value="">Выберите тему</option>
-          <option value="product">Заказ товара</option>
-          <option value="consultation">Консультация</option>
-          <option value="delivery">Доставка</option>
-        </select>
-      </div>
-
-      <div class="form-field">
-        <label for="order-comment">Комментарий</label>
-        <textarea
-          id="order-comment"
-          name="comment"
-          rows="4"
-          placeholder="Укажите дополнительную информацию"
-        ></textarea>
-      </div>
-
-      <div class="form-field form-field--checkbox">
-        <label for="order-agreement">
-          <input
-            id="order-agreement"
-            name="agreement"
-            type="checkbox"
-            required
-          >
-          Я согласен на обработку данных
-        </label>
-      </div>
-
-      <div class="form-actions">
-        <button class="button" type="button" id="close-order-dialog">Закрыть</button>
-        <button class="button" type="submit">Отправить заявку</button>
-      </div>
-    </form>
-  </dialog>
-
-  <p class="success-message" id="success-message" role="status" hidden>
-    Форма успешно отправлена!
-  </p>
+<body data-page="index">
+<a href="#main" class="skip-link">Перейти к содержимому</a>
+<div class="announcement">ЗВУК, КОТОРЫЙ БЛИЖЕ. &nbsp; / &nbsp; ДОСТАВКА БЕСПЛАТНО ОТ 10 000 ₽</div>
+<header class="site-header">
+<nav class="navbar navbar-expand-lg container" aria-label="Основная навигация">
+<a class="navbar-brand" href="index.html" aria-label="Ритм — главная">ритм<span class="brand-dot">.</span>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Открыть меню">
+<span class="navbar-toggler-icon">
+</span>
+</button>
+<div class="collapse navbar-collapse" id="main-nav">
+<ul class="navbar-nav mx-auto">
+<li class="nav-item">
+<a class="nav-link active" aria-current="page" href="index.html">Главная</a>
+</li>
+<li class="nav-item">
+<a class="nav-link "  href="catalog.html">Каталог</a>
+</li>
+<li class="nav-item">
+<a class="nav-link "  href="index.html#advantages">О нас</a>
+</li>
+<li class="nav-item">
+<a class="nav-link "  href="contacts.html">Контакты</a>
+</li>
+</ul>
+<a class="cart-link" href="order.html">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M5 7h14l1 14H4L5 7Z"/>
+<path d="M8 8V6a4 4 0 0 1 8 0v2"/>
+</svg> Корзина <span class="cart-count" data-cart-count aria-label="Количество товаров">0</span>
+</a>
+</div>
+</nav>
+</header>
+<main id="main">
+<section class="hero container">
+<div class="hero-panel">
+<div class="row g-0 align-items-stretch">
+<div class="col-lg-6">
+<div class="hero-copy">
+<div class="eyebrow">Магазин персонального звука &nbsp; / &nbsp; 2026</div>
+<h1>Отключите шум.<br>Включите <span>себя.</span>
+</h1>
+<p>Наушники и акустика для моментов,<br class="d-none d-sm-inline"> в которых хочется остаться.</p>
+<a href="catalog.html" class="btn btn-primary mt-3">Найти свой звук <span class="arrow">↗</span>
+</a>
+<p class="hero-note">Для работы, дороги и всего, что между.</p>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="hero-visual">
+<img src="images/products/studio.jpg" alt="Чёрные полноразмерные наушники на светлом рабочем столе" fetchpriority="high">
+<a class="hero-caption" href="product.html?id=studio">
+<span>
+<span class="small-label">В ФОКУСЕ</span>
+<strong>Studio 01</strong>
+</span>
+<span>12 990 ₽ &nbsp; ↗</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="container">
+<div class="benefits row g-3 mx-0">
+<div class="col-md-4 benefit">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M2 5h13v12H2zM15 9h4l3 4v4h-7"/>
+<circle cx="6" cy="18" r="2"/>
+<circle cx="18" cy="18" r="2"/>
+</svg>
+<span>Бесплатная доставка от 10 000 ₽</span>
+</div>
+<div class="col-md-4 benefit justify-content-md-center">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+<path d="m12 2 8 3v6c0 5-8 10-8 10S4 16 4 11V5l8-3Z"/>
+<path d="m8 11 3 3 5-6"/>
+</svg>
+<span>Гарантия 12 месяцев</span>
+</div>
+<div class="col-md-4 benefit justify-content-md-end">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M4 14v-4m4 9V5m4 17V2m4 17V5m4 9v-4"/>
+</svg>
+<span>Только то, что хочется слушать</span>
+</div>
+</div>
+</div>
+<section class="container section-space" id="popular">
+<div class="section-heading d-flex justify-content-between align-items-end">
+<div>
+<p class="eyebrow">Небольшая коллекция. Большой звук.</p>
+<h2 class="mb-0">Ваш следующий любимый.</h2>
+</div>
+<a class="btn btn-outline-dark" href="catalog.html">Весь каталог &nbsp; ↗</a>
+</div>
+<div class="d-flex flex-wrap category-pills" aria-label="Категории товаров">
+<a class="btn btn-dark" href="catalog.html">Все товары</a>
+<a class="btn btn-outline-dark" href="catalog.html?category=headphones">Наушники</a>
+<a class="btn btn-outline-dark" href="catalog.html?category=earbuds">Вкладыши</a>
+<a class="btn btn-outline-dark" href="catalog.html?category=speakers">Акустика</a>
+</div>
+<div class="row g-4" id="popular-products">
+</div>
+</section>
+<section class="container pb-5" id="advantages">
+<div class="manifesto">
+<div class="row g-4 align-items-center">
+<div class="col-lg-6">
+<p class="eyebrow">Наш подход</p>
+<h2>Меньше лишнего.<br>Больше музыки.</h2>
+</div>
+<div class="col-lg-6">
+<p>Мы верим, что хороший звук делает обычные моменты особенными. Поэтому в нашей коллекции — только понятные устройства для жизни в вашем ритме.</p>
+<a class="text-white small" href="contacts.html">Познакомиться с нами &nbsp; ↗</a>
+</div>
+</div>
+</div>
+</section>
+<section class="container pb-5" id="contacts">
+<div class="d-flex align-items-center justify-content-between flex-wrap gap-3 border-top pt-4">
+<p class="mb-0 text-secondary">Не знаете, с чего начать? Поможем найти ваш звук.</p>
+<a class="btn btn-outline-dark" href="contacts.html#feedback">Задать вопрос ↗</a>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="row g-4 align-items-center">
+<div class="col-md-5">
+<a class="footer-brand text-decoration-none" href="index.html">ритм<span class="brand-dot">.</span>
+</a>
+<p class="text-secondary small mt-3 mb-0">Хороший звук. В вашем ритме.</p>
+</div>
+<div class="col-md-7 d-flex gap-4 justify-content-md-end flex-wrap small">
+<a href="catalog.html">Каталог</a>
+<a href="contacts.html">Контакты</a>
+<button class="btn btn-link p-0 text-reset small" data-bs-toggle="modal" data-bs-target="#delivery-modal">Доставка и оплата</button>
+</div>
+</div>
+<div class="footer-bottom d-flex justify-content-between flex-wrap gap-2">
+<span>© 2026 ритм. Учебный интернет-магазин.</span>
+<span>Жегль Ярослав · ЭФБО-03-25</span>
+</div>
+</div>
+</footer>
+<div class="modal fade" id="delivery-modal" tabindex="-1" aria-labelledby="delivery-title" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header border-0">
+<h2 class="modal-title" id="delivery-title">Доставка и оплата</h2>
+<button class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть">
+</button>
+</div>
+<div class="modal-body pt-0">
+<p>Курьерская доставка — 490 ₽. При сумме товаров от 10 000 ₽ — бесплатно. Самовывоз — бесплатно.</p>
+<p>Демонстрационный срок доставки: 2–4 дня. Оплата при получении.</p>
+<div class="alert alert-secondary small mb-0">Это учебный магазин: реальные заказы, оплата и доставка не выполняются. Фотографии, товары и условия используются для демонстрации интерфейса.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+<div id="cart-toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+<div class="d-flex">
+<div class="toast-body" id="cart-toast-text">Товар добавлен в корзину.</div>
+<button class="btn-close btn-close-white me-3 m-auto" data-bs-dismiss="toast" aria-label="Закрыть">
+</button>
+</div>
+</div>
+</div>
+<noscript>
+<div class="alert alert-warning m-3">Для каталога, корзины и оформления заказа включите JavaScript в браузере.</div>
+</noscript>
 </body>
 </html>

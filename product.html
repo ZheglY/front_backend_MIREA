@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Карточка товара. Ритм — учебный магазин аудиотехники: наушники, вкладыши и портативная акустика.">
+<meta name="theme-color" content="#232522">
+<title>Карточка товара — ритм.</title>
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="css/custom.css">
+<script src="vendor/bootstrap/bootstrap.bundle.min.js" defer>
+</script>
+<script src="js/products.js" defer>
+</script>
+<script src="js/main.js" defer>
+</script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Карточка товара — ритм.">
+<meta property="og:description" content="Наушники и акустика для жизни в вашем ритме. Учебный интернет-магазин.">
+<meta property="og:url" content="https://zhegly.github.io/front_backend_MIREA/product.html">
+<meta property="og:image" content="https://zhegly.github.io/front_backend_MIREA/images/preview.jpg">
+<meta property="og:image:alt" content="Главная страница магазина аудиотехники ритм.">
+</head>
+<body data-page="product">
+<a href="#main" class="skip-link">Перейти к содержимому</a>
+<div class="announcement">ЗВУК, КОТОРЫЙ БЛИЖЕ. &nbsp; / &nbsp; ДОСТАВКА БЕСПЛАТНО ОТ 10 000 ₽</div>
+<header class="site-header">
+<nav class="navbar navbar-expand-lg container" aria-label="Основная навигация">
+<a class="navbar-brand" href="index.html" aria-label="Ритм — главная">ритм<span class="brand-dot">.</span>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Открыть меню">
+<span class="navbar-toggler-icon">
+</span>
+</button>
+<div class="collapse navbar-collapse" id="main-nav">
+<ul class="navbar-nav mx-auto">
+<li class="nav-item">
+<a class="nav-link "  href="index.html">Главная</a>
+</li>
+<li class="nav-item">
+<a class="nav-link "  href="catalog.html">Каталог</a>
+</li>
+<li class="nav-item">
+<a class="nav-link "  href="index.html#advantages">О нас</a>
+</li>
+<li class="nav-item">
+<a class="nav-link "  href="contacts.html">Контакты</a>
+</li>
+</ul>
+<a class="cart-link" href="order.html">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M5 7h14l1 14H4L5 7Z"/>
+<path d="M8 8V6a4 4 0 0 1 8 0v2"/>
+</svg> Корзина <span class="cart-count" data-cart-count aria-label="Количество товаров">0</span>
+</a>
+</div>
+</nav>
+</header>
+<main id="main">
+<nav class="container" aria-label="Хлебные крошки">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="index.html">Главная</a>
+</li>
+<li class="breadcrumb-item">
+<a href="catalog.html">Каталог</a>
+</li>
+<li class="breadcrumb-item active" id="product-crumb" aria-current="page">Товар</li>
+</ol>
+</nav>
+<section class="container pb-5" id="product-detail">
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="row g-4 align-items-center">
+<div class="col-md-5">
+<a class="footer-brand text-decoration-none" href="index.html">ритм<span class="brand-dot">.</span>
+</a>
+<p class="text-secondary small mt-3 mb-0">Хороший звук. В вашем ритме.</p>
+</div>
+<div class="col-md-7 d-flex gap-4 justify-content-md-end flex-wrap small">
+<a href="catalog.html">Каталог</a>
+<a href="contacts.html">Контакты</a>
+<button class="btn btn-link p-0 text-reset small" data-bs-toggle="modal" data-bs-target="#delivery-modal">Доставка и оплата</button>
+</div>
+</div>
+<div class="footer-bottom d-flex justify-content-between flex-wrap gap-2">
+<span>© 2026 ритм. Учебный интернет-магазин.</span>
+<span>Жегль Ярослав · ЭФБО-03-25</span>
+</div>
+</div>
+</footer>
+<div class="modal fade" id="delivery-modal" tabindex="-1" aria-labelledby="delivery-title" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header border-0">
+<h2 class="modal-title" id="delivery-title">Доставка и оплата</h2>
+<button class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть">
+</button>
+</div>
+<div class="modal-body pt-0">
+<p>Курьерская доставка — 490 ₽. При сумме товаров от 10 000 ₽ — бесплатно. Самовывоз — бесплатно.</p>
+<p>Демонстрационный срок доставки: 2–4 дня. Оплата при получении.</p>
+<div class="alert alert-secondary small mb-0">Это учебный магазин: реальные заказы, оплата и доставка не выполняются. Фотографии, товары и условия используются для демонстрации интерфейса.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+<div id="cart-toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+<div class="d-flex">
+<div class="toast-body" id="cart-toast-text">Товар добавлен в корзину.</div>
+<button class="btn-close btn-close-white me-3 m-auto" data-bs-dismiss="toast" aria-label="Закрыть">
+</button>
+</div>
+</div>
+</div>
+<noscript>
+<div class="alert alert-warning m-3">Для каталога, корзины и оформления заказа включите JavaScript в браузере.</div>
+</noscript>
+</body>
+</html>

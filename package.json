@@ -1,0 +1,13 @@
+{
+  "name": "ritm-bootstrap-shop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Учебный магазин на Bootstrap — контрольная работа №2",
+  "scripts": {
+    "start": "node scripts/serve.cjs",
+    "test": "node scripts/verify.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

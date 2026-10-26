@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Оформление заказа. Ритм — учебный магазин аудиотехники: наушники, вкладыши и портативная акустика.">
+<meta name="theme-color" content="#232522">
+<title>Оформление заказа — ритм.</title>
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="css/custom.css">
+<script src="vendor/bootstrap/bootstrap.bundle.min.js" defer>
+</script>
+<script src="js/products.js" defer>
+</script>
+<script src="js/main.js" defer>
+</script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Оформление заказа — ритм.">
+<meta property="og:description" content="Наушники и акустика для жизни в вашем ритме. Учебный интернет-магазин.">
+<meta property="og:url" content="https://zhegly.github.io/front_backend_MIREA/order.html">
+<meta property="og:image" content="https://zhegly.github.io/front_backend_MIREA/images/preview.jpg">
+<meta property="og:image:alt" content="Главная страница магазина аудиотехники ритм.">
+</head>
+<body data-page="order">
+<a href="#main" class="skip-link">Перейти к содержимому</a>
+<div class="announcement">ЗВУК, КОТОРЫЙ БЛИЖЕ. &nbsp; / &nbsp; ДОСТАВКА БЕСПЛАТНО ОТ 10 000 ₽</div>
+<header class="site-header">
+<nav class="navbar navbar-expand-lg container" aria-label="Основная навигация">
+<a class="navbar-brand" href="index.html" aria-label="Ритм — главная">ритм<span class="brand-dot">.</span>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Открыть меню">
+<span class="navbar-toggler-icon">
+</span>
+</button>
+<div class="collapse navbar-collapse" id="main-nav">
+<ul class="navbar-nav mx-auto">
+<li class="nav-item">
+<a class="nav-link "  href="index.html">Главная</a>
+</li>
+<li class="nav-item">
+<a class="nav-link "  href="catalog.html">Каталог</a>
+</li>
+<li class="nav-item">
+<a class="nav-link "  href="index.html#advantages">О нас</a>
+</li>
+<li class="nav-item">
+<a class="nav-link "  href="contacts.html">Контакты</a>
+</li>
+</ul>
+<a class="cart-link" href="order.html">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M5 7h14l1 14H4L5 7Z"/>
+<path d="M8 8V6a4 4 0 0 1 8 0v2"/>
+</svg> Корзина <span class="cart-count" data-cart-count aria-label="Количество товаров">0</span>
+</a>
+</div>
+</nav>
+</header>
+<main id="main">
+<nav class="container" aria-label="Хлебные крошки">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="index.html">Главная</a>
+</li>
+<li class="breadcrumb-item active" aria-current="page">Оформление заказа</li>
+</ol>
+</nav>
+<section class="container pb-5">
+<p class="eyebrow text-secondary">Осталось совсем немного</p>
+<h1 class="mb-4">Ваш новый ритм.</h1>
+<div id="empty-cart" class="empty-state my-4" hidden>
+<h2>В корзине пока тихо</h2>
+<p class="text-secondary">Найдите то, что хочется слушать каждый день.</p>
+<a class="btn btn-primary" href="catalog.html">Перейти в каталог ↗</a>
+</div>
+<div class="row gy-5 gx-4 gx-lg-5" id="checkout-content">
+<div class="col-lg-7">
+<form id="order-form" novalidate>
+<h2 class="form-section-title mt-2 mb-4">
+<span class="step-label">1</span>Контактные данные</h2>
+<div class="row g-3">
+<div class="col-sm-6">
+<label for="order-name" class="form-label">Имя *</label>
+<input class="form-control" id="order-name" name="name" autocomplete="given-name" minlength="2" maxlength="80" required placeholder="Ваше имя">
+<div class="invalid-feedback">Укажите имя: минимум 2 символа.</div>
+</div>
+<div class="col-sm-6">
+<label for="order-phone" class="form-label">Телефон *</label>
+<input class="form-control" id="order-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+7 (900) 000-00-00" aria-describedby="phone-hint">
+<div class="invalid-feedback">Введите 11 цифр, начиная с +7 или 8.</div>
+<div class="form-text" id="phone-hint">Например, +7 (900) 123-45-67.</div>
+</div>
+<div class="col-12">
+<label for="order-email" class="form-label">Email *</label>
+<input class="form-control" id="order-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+<div class="invalid-feedback">Введите корректный email.</div>
+</div>
+</div>
+<h2 class="form-section-title mt-5 mb-4">
+<span class="step-label">2</span>Доставка</h2>
+<label class="form-label" for="delivery">Способ получения</label>
+<select class="form-select mb-3" id="delivery" name="delivery">
+<option value="courier">Курьером — 490 ₽, бесплатно от 10 000 ₽</option>
+<option value="pickup">Самовывоз — бесплатно</option>
+</select>
+<div id="address-field">
+<label class="form-label" for="order-address">Адрес доставки *</label>
+<input class="form-control" id="order-address" name="address" autocomplete="street-address" required minlength="8" placeholder="Город, улица, дом, квартира">
+<div class="invalid-feedback">Укажите полный адрес: минимум 8 символов.</div>
+</div>
+<p id="pickup-note" class="alert alert-secondary small" hidden>Демонстрационный пункт самовывоза: Москва, ул. Примерная, 12. Ежедневно, 10:00–20:00.</p>
+<label class="form-label mt-3" for="order-comment">Комментарий к заказу</label>
+<textarea class="form-control" id="order-comment" name="comment" rows="3" maxlength="1000" placeholder="Что нам нужно знать?">
+</textarea>
+<div class="form-check mt-4">
+<input class="form-check-input" id="order-agreement" type="checkbox" required>
+<label class="form-check-label small" for="order-agreement">Я понимаю, что это учебный заказ и данные не отправляются на сервер. *</label>
+<div class="invalid-feedback">Подтвердите, что ознакомились с условиями.</div>
+</div>
+<p class="order-note mt-3">* Обязательные поля. Оплата при получении. Не вводите реальные персональные данные.</p>
+<button class="btn btn-primary mt-2" type="submit">Оформить учебный заказ <span class="arrow">↗</span>
+</button>
+</form>
+</div>
+<div class="col-lg-5">
+<aside class="checkout-panel">
+<h2>В вашем заказе</h2>
+<div id="order-items">
+</div>
+<dl class="mt-4 mb-0">
+<div class="d-flex justify-content-between small">
+<dt class="fw-normal">Товары</dt>
+<dd id="subtotal">
+</dd>
+</div>
+<div class="d-flex justify-content-between small">
+<dt class="fw-normal">Доставка</dt>
+<dd id="shipping">
+</dd>
+</div>
+<div class="d-flex justify-content-between border-top pt-3 mt-2 fs-5">
+<dt>Итого</dt>
+<dd class="fw-semibold" id="total">
+</dd>
+</div>
+</dl>
+<p class="order-note mb-0">
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+<path d="m12 2 8 3v6c0 5-8 10-8 10S4 16 4 11V5l8-3Z"/>
+<path d="m8 11 3 3 5-6"/>
+</svg> Без онлайн-оплаты. Всё под вашим контролем.</p>
+</aside>
+</div>
+</div>
+</section>
+<div class="modal fade" id="success-modal" tabindex="-1" aria-labelledby="success-title" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header border-0">
+<button class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть">
+</button>
+</div>
+<div class="modal-body text-center px-4 pb-5">
+<span class="success-symbol" aria-hidden="true">✓</span>
+<h2 class="modal-title mb-3" id="success-title">Всё получилось!</h2>
+<p id="success-summary">
+</p>
+<p class="text-secondary small">Учебный заказ успешно оформлен. Данные не отправлялись на сервер, деньги не списывались.</p>
+<a class="btn btn-primary mt-2" href="catalog.html">Вернуться в каталог ↗</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="row g-4 align-items-center">
+<div class="col-md-5">
+<a class="footer-brand text-decoration-none" href="index.html">ритм<span class="brand-dot">.</span>
+</a>
+<p class="text-secondary small mt-3 mb-0">Хороший звук. В вашем ритме.</p>
+</div>
+<div class="col-md-7 d-flex gap-4 justify-content-md-end flex-wrap small">
+<a href="catalog.html">Каталог</a>
+<a href="contacts.html">Контакты</a>
+<button class="btn btn-link p-0 text-reset small" data-bs-toggle="modal" data-bs-target="#delivery-modal">Доставка и оплата</button>
+</div>
+</div>
+<div class="footer-bottom d-flex justify-content-between flex-wrap gap-2">
+<span>© 2026 ритм. Учебный интернет-магазин.</span>
+<span>Жегль Ярослав · ЭФБО-03-25</span>
+</div>
+</div>
+</footer>
+<div class="modal fade" id="delivery-modal" tabindex="-1" aria-labelledby="delivery-title" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header border-0">
+<h2 class="modal-title" id="delivery-title">Доставка и оплата</h2>
+<button class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть">
+</button>
+</div>
+<div class="modal-body pt-0">
+<p>Курьерская доставка — 490 ₽. При сумме товаров от 10 000 ₽ — бесплатно. Самовывоз — бесплатно.</p>
+<p>Демонстрационный срок доставки: 2–4 дня. Оплата при получении.</p>
+<div class="alert alert-secondary small mb-0">Это учебный магазин: реальные заказы, оплата и доставка не выполняются. Фотографии, товары и условия используются для демонстрации интерфейса.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+<div id="cart-toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+<div class="d-flex">
+<div class="toast-body" id="cart-toast-text">Товар добавлен в корзину.</div>
+<button class="btn-close btn-close-white me-3 m-auto" data-bs-dismiss="toast" aria-label="Закрыть">
+</button>
+</div>
+</div>
+</div>
+<noscript>
+<div class="alert alert-warning m-3">Для каталога, корзины и оформления заказа включите JavaScript в браузере.</div>
+</noscript>
+</body>
+</html>
