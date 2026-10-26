@@ -3,19 +3,14 @@
   'use strict';
   const products = window.shopProducts;
   const money = value => new Intl.NumberFormat('ru-RU', {style:'currency',currency:'RUB',maximumFractionDigits:0}).format(value);
-  const storageKey = 'ritm-cart-v1';
   const findProduct = id => products.find(product => product.id === id);
-  let cart = {};
-  let storageAvailable = true;
-  try {
-    const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
-    if (saved && typeof saved === 'object' && !Array.isArray(saved)) {
-      for (const product of products) {
-        const count = saved[product.id];
-        if (Number.isInteger(count) && count > 0) cart[product.id] = Math.min(99, count);
-      }
-    }
-  } catch { cart = {}; }
+  let cart = window.shopCart.read();
+  let renderOrderView = () => {};
+  window.shopCart.subscribe(items => {
+    cart = items;
+    updateCount();
+    renderOrderView();
+  });
   function notify(message) {
     document.getElementById('cart-toast-text').textContent = message;
     bootstrap.Toast.getOrCreateInstance(document.getElementById('cart-toast'), {delay:3500}).show();
@@ -25,8 +20,7 @@
     document.querySelectorAll('[data-cart-count]').forEach(node => {node.textContent = count; node.setAttribute('aria-label', `Товаров в корзине: ${count}`);});
   }
   function saveCart() {
-    try { localStorage.setItem(storageKey, JSON.stringify(cart)); }
-    catch { storageAvailable = false; notify('Браузер запретил сохранение корзины. Разрешите локальное хранилище и откройте сайт через localhost.'); }
+    window.shopCart.save(cart);
     updateCount();
   }
   function addToCart(id) {
@@ -34,7 +28,7 @@
     if ((cart[id] || 0) >= 99) {notify('Максимум 99 единиц одного товара.'); return;}
     cart[id] = (cart[id] || 0) + 1;
     saveCart();
-    if (storageAvailable) notify(`${findProduct(id).name} — добавлено в корзину`);
+    notify(`${findProduct(id).name} — добавлено в корзину`);
   }
   function card(product) {
     return `<div class="col-sm-6 col-xl-4"><article class="card product-card"><a class="product-image" href="product.html?id=${product.id}" aria-label="Подробнее о ${product.name}"><img src="images/products/${product.image}" alt="${product.categoryName} ${product.name}" loading="lazy" width="800" height="640"><span class="badge product-badge">${product.badge}</span></a><div class="card-body d-flex flex-column"><span class="small-label">${product.categoryName}</span><h3 class="card-title"><a href="product.html?id=${product.id}">${product.name}</a></h3><p class="card-text">${product.short}</p><div class="d-flex justify-content-between align-items-center mt-auto"><strong class="product-price">${money(product.price)}</strong><button class="btn btn-outline-dark add-button" data-add="${product.id}" aria-label="Добавить ${product.name} в корзину">+</button></div></div></article></div>`;
@@ -45,7 +39,45 @@
   });
   updateCount();
   const popular = document.getElementById('popular-products');
-  if (popular) popular.innerHTML = products.map(card).join('');
+  if (popular) {
+    popular.innerHTML = products.map((product, index) => `
+      <article class="carousel-item ${index === 0 ? 'active' : ''}" role="group" aria-roledescription="слайд" aria-label="${index + 1} из ${products.length}" ${index ? 'inert aria-hidden="true"' : ''}>
+        <div class="card carousel-product">
+          <div class="row g-0 align-items-stretch">
+            <div class="col-md-6">
+              <a href="product.html?id=${product.id}" class="carousel-photo" aria-label="Подробнее о ${product.name}">
+                <img src="images/products/${product.image}" alt="${product.categoryName} ${product.name}" width="800" height="640">
+                <span class="badge product-badge">${product.badge}</span>
+              </a>
+            </div>
+            <div class="col-md-6">
+              <div class="card-body carousel-copy">
+                <p class="eyebrow text-secondary">${product.categoryName}</p>
+                <h3><a href="product.html?id=${product.id}">${product.name}</a></h3>
+                <p class="carousel-tagline">${product.short}</p>
+                <p class="text-secondary carousel-description">${product.description}</p>
+                <strong class="carousel-price">${money(product.price)}</strong>
+                <div class="d-flex gap-2 flex-wrap mt-3">
+                  <button class="btn btn-primary" type="button" data-add="${product.id}" aria-label="Добавить ${product.name} в корзину">В корзину +</button>
+                  <a class="btn btn-outline-dark" href="product.html?id=${product.id}">Подробнее ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>`).join('');
+    document.getElementById('product-indicators').innerHTML = products.map((product, index) => `
+      <button type="button" data-bs-target="#product-carousel" data-bs-slide-to="${index}" ${index === 0 ? 'class="active" aria-current="true"' : ''} aria-label="Показать ${product.name}"></button>`).join('');
+    const carousel = document.getElementById('product-carousel');
+    bootstrap.Carousel.getOrCreateInstance(carousel, {interval: false, ride: false, touch: true, keyboard: true, wrap: true});
+    carousel.addEventListener('slid.bs.carousel', event => {
+      popular.querySelectorAll('.carousel-item').forEach((slide, index) => {
+        slide.inert = index !== event.to;
+        slide.setAttribute('aria-hidden', String(index !== event.to));
+      });
+      document.getElementById('carousel-status').textContent = `${String(event.to + 1).padStart(2, '0')} / ${String(products.length).padStart(2, '0')}`;
+    });
+  }
 
   // Каталог: поиск, категория, предельная цена и сортировка работают совместно.
   const filters = document.getElementById('filter-form');
@@ -160,8 +192,8 @@
       bootstrap.Modal.getOrCreateInstance(document.getElementById('success-modal')).show();
     });
     document.getElementById('success-modal').addEventListener('hidden.bs.modal',()=>document.querySelector('#empty-cart a').focus());
+    renderOrderView = renderOrder;
     renderOrder();
-    window.addEventListener('storage',event=>{if(event.key===storageKey) location.reload();});
   }
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {

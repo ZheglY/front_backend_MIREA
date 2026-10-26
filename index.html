@@ -8,12 +8,13 @@
 <title>Хороший звук. В вашем ритме — ритм.</title>
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="css/custom.css?v=20261026-carousel">
 <script src="vendor/bootstrap/bootstrap.bundle.min.js" defer>
 </script>
-<script src="js/products.js" defer>
+<script src="js/products.js?v=20261026-carousel" defer>
 </script>
-<script src="js/main.js" defer>
+<script src="js/cart.js?v=20261026-carousel" defer></script>
+<script src="js/main.js?v=20261026-carousel" defer>
 </script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Хороший звук. В вашем ритме — ритм.">
@@ -116,7 +117,7 @@
 <div class="section-heading d-flex justify-content-between align-items-end">
 <div>
 <p class="eyebrow">Небольшая коллекция. Большой звук.</p>
-<h2 class="mb-0">Ваш следующий любимый.</h2>
+<h2 class="mb-0" id="popular-title">Ваш следующий любимый.</h2>
 </div>
 <a class="btn btn-outline-dark" href="catalog.html">Весь каталог &nbsp; ↗</a>
 </div>
@@ -126,7 +127,16 @@
 <a class="btn btn-outline-dark" href="catalog.html?category=earbuds">Вкладыши</a>
 <a class="btn btn-outline-dark" href="catalog.html?category=speakers">Акустика</a>
 </div>
-<div class="row g-4" id="popular-products">
+<div class="carousel slide product-carousel" id="product-carousel" role="region" aria-roledescription="карусель" aria-labelledby="popular-title" data-bs-interval="false" data-bs-touch="true" tabindex="0">
+<div class="carousel-inner" id="popular-products"></div>
+<div class="carousel-toolbar">
+<span class="carousel-status" id="carousel-status" role="status" aria-live="polite" aria-atomic="true">01 / 03</span>
+<div class="carousel-indicators" id="product-indicators" aria-label="Выбрать товар"></div>
+<div class="d-flex gap-2">
+<button type="button" class="btn btn-outline-dark carousel-arrow" data-bs-target="#product-carousel" data-bs-slide="prev" aria-label="Предыдущий товар"><span aria-hidden="true">←</span></button>
+<button type="button" class="btn btn-dark carousel-arrow" data-bs-target="#product-carousel" data-bs-slide="next" aria-label="Следующий товар"><span aria-hidden="true">→</span></button>
+</div>
+</div>
 </div>
 </section>
 <section class="container pb-5" id="advantages">

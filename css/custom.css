@@ -14,521 +14,778 @@
   --bs-link-color-rgb:35,37,34;
   --bs-link-hover-color-rgb:199,70,34;
   --bs-link-hover-color:var(--accent);
-  --bs-body-font-family:Arial,Helvetica,sans-serif}
-  body{
-    line-height:1.6}
-    h1,h2,h3,h4{
-      line-height:1.1;
-      letter-spacing:-.045em}
-      h1{
-        font-size:clamp(2.5rem,5vw,4.5rem);
-        font-weight:600}
-        h2{
-          font-size:clamp(2rem,3.4vw,3rem);
-          font-weight:500}
-          a{
-            text-underline-offset:5px}
-            button,a,input,select,textarea{
-              touch-action:manipulation}
-              :focus-visible{
-                outline:3px solid var(--accent);
-                outline-offset:4px}
-                .text-secondary{
-                  color:var(--muted)!important}
-                  .eyebrow{
-                    font-size:.72rem;
-                    font-weight:700;
-                    letter-spacing:.15em;
-                    text-transform:uppercase}
-                    .section-space{
-                      padding-block:76px}
-                      .btn{
-                        padding:.8rem 1.3rem;
-                        font-weight:600;
-                        border-radius:6px}
-                        .btn-primary{
-                          --bs-btn-bg:var(--accent);
-                          --bs-btn-border-color:var(--accent);
-                          --bs-btn-hover-bg:#a63719;
-                          --bs-btn-hover-border-color:#a63719;
-                          --bs-btn-active-bg:#923017;
-                          --bs-btn-active-border-color:#923017;
-                          --bs-btn-disabled-bg:var(--accent);
-                          --bs-btn-disabled-border-color:var(--accent);
-                          --bs-btn-focus-shadow-rgb:199,70,34}
-                          .btn-dark{
-                            --bs-btn-bg:var(--ink);
-                            --bs-btn-border-color:var(--ink)}
-                            .btn-outline-dark{
-                              --bs-btn-color:var(--ink);
-                              --bs-btn-border-color:#b9bcb2}
-                              .btn-sm{
-                                padding:.48rem .85rem}
-                                .form-control,.form-select{
-                                  padding:.8rem 1rem;
-                                  background-color:#fff;
-                                  border-radius:6px}
-                                  .form-control:focus,.form-select:focus,.form-check-input:focus{
-                                    border-color:var(--accent);
-                                    box-shadow:0 0 0 .2rem #c7462220}
-                                    .form-check-input:checked{
-                                      background-color:var(--accent);
-                                      border-color:var(--accent)}
-                                      .form-label{
-                                        font-size:.85rem;
-                                        font-weight:600}
-                                        .skip-link{
-                                          position:absolute;
-                                          top:-80px;
-                                          left:20px;
-                                          z-index:1100;
-                                          padding:10px;
-                                          background:white}
-                                          .skip-link:focus{
-                                            top:8px}
-                                            .arrow{
-                                              margin-left:1.6rem}
-                                              .icon{
-                                                width:21px;
-                                                height:21px;
-                                                fill:none;
-                                                stroke:currentColor;
-                                                stroke-width:1.7;
-                                                vertical-align:middle;
-                                                flex-shrink:0}
-                                                /* 2. Общая навигация и подвал. */
-                                                .announcement{
-                                                  background:var(--ink);
-                                                  color:#f5f5ed;
-                                                  text-align:center;
-                                                  font-size:.7rem;
-                                                  letter-spacing:.07em;
-                                                  padding:9px 12px}
-                                                  .site-header{
-                                                    border-bottom:1px solid var(--line)}
-                                                    .navbar{
-                                                      min-height:94px}
-                                                      .navbar-brand,.footer-brand{
-                                                        font-size:2.35rem;
-                                                        font-weight:800;
-                                                        letter-spacing:-.09em;
-                                                        line-height:1;
-                                                        color:var(--ink)}
-                                                        .brand-dot{
-                                                          color:var(--accent)}
-                                                          .navbar-nav{
-                                                            gap:26px}
-                                                            .navbar .nav-link{
-                                                              font-size:.87rem;
-                                                              color:var(--muted);
-                                                              padding-block:10px}
-                                                              .navbar .nav-link.active{
-                                                                color:var(--ink);
-                                                                text-decoration:underline;
-                                                                text-decoration-color:var(--accent);
-                                                                text-decoration-thickness:2px;
-                                                                text-underline-offset:9px}
-                                                                .cart-link{
-                                                                  display:flex;
-                                                                  gap:9px;
-                                                                  align-items:center;
-                                                                  font-size:.85rem;
-                                                                  text-decoration:none}
-                                                                  .cart-count{
-                                                                    display:inline-flex;
-                                                                    justify-content:center;
-                                                                    align-items:center;
-                                                                    border-radius:50%;
-                                                                    background:var(--ink);
-                                                                    color:white;
-                                                                    font-size:.7rem;
-                                                                    min-width:23px;
-                                                                    height:23px}
-                                                                    .navbar-toggler{
-                                                                      border:0;
-                                                                      padding:8px}
-                                                                      .site-footer{
-                                                                        border-top:1px solid var(--line);
-                                                                        padding:42px 0 22px}
-                                                                        .site-footer a{
-                                                                          color:inherit}
-                                                                          .footer-bottom{
-                                                                            border-top:1px solid var(--line);
-                                                                            padding-top:20px;
-                                                                            margin-top:35px;
-                                                                            font-size:.72rem;
-                                                                            color:var(--muted)}
-                                                                            .breadcrumb{
-                                                                              font-size:.78rem;
-                                                                              padding-top:28px;
-                                                                              margin-bottom:36px}
-                                                                              .breadcrumb a{
-                                                                                color:var(--muted);
-                                                                                text-decoration:none}
-                                                                                .breadcrumb-item.active{
-                                                                                  color:var(--ink)}
-                                                                                  /* 3. Главная страница. */
-                                                                                  .hero{
-                                                                                    padding-top:42px}
-                                                                                    .hero-panel{
-                                                                                      background:#e9eae3;
-                                                                                      border-radius:12px;
-                                                                                      overflow:hidden}
-                                                                                      .hero-copy{
-                                                                                        padding:55px 0 55px 48px}
-                                                                                        .hero h1{
-                                                                                          font-size:clamp(3.1rem,4.5vw,4rem);
-                                                                                          line-height:1.02;
-                                                                                          margin:28px 0 24px;
-                                                                                          letter-spacing:-.065em}
-                                                                                          .hero h1 span{
-                                                                                            color:var(--accent)}
-                                                                                            .hero-copy p{
-                                                                                              max-width:320px;
-                                                                                              font-size:.95rem;
-                                                                                              color:var(--muted)}
-                                                                                              .hero-note{
-                                                                                                font-size:.71rem!important;
-                                                                                                margin-top:28px;
-                                                                                                margin-bottom:0}
-                                                                                                .hero-visual{
-                                                                                                  position:relative;
-                                                                                                  min-height:490px;
-                                                                                                  height:100%;
-                                                                                                  background:#e9eae3}
-                                                                                                  .hero-visual img{
-                                                                                                    width:100%;
-                                                                                                    height:100%;
-                                                                                                    position:absolute;
-                                                                                                    object-fit:cover;
-                                                                                                    mix-blend-mode:multiply}
-                                                                                                    .hero-caption{
-                                                                                                      position:absolute;
-                                                                                                      bottom:22px;
-                                                                                                      left:26px;
-                                                                                                      right:26px;
-                                                                                                      background:#ffffffdc;
-                                                                                                      backdrop-filter:blur(10px);
-                                                                                                      padding:16px 20px;
-                                                                                                      border:1px solid #fff;
-                                                                                                      border-radius:7px;
-                                                                                                      display:flex;
-                                                                                                      align-items:center;
-                                                                                                      justify-content:space-between;
-                                                                                                      font-size:.82rem;
-                                                                                                      text-decoration:none}
-                                                                                                      .hero-caption strong{
-                                                                                                        display:block;
-                                                                                                        font-size:1rem}
-                                                                                                        .small-label{
-                                                                                                          font-size:.7rem;
-                                                                                                          color:var(--muted)}
-                                                                                                          .benefits{
-                                                                                                            padding:26px 0;
-                                                                                                            border-bottom:1px solid var(--line)}
-                                                                                                            .benefit{
-                                                                                                              display:flex;
-                                                                                                              align-items:center;
-                                                                                                              gap:13px;
-                                                                                                              font-size:.8rem}
-                                                                                                              .benefit .icon{
-                                                                                                                color:var(--accent)}
-                                                                                                                .section-heading{
-                                                                                                                  margin-bottom:30px}
-                                                                                                                  .section-heading .eyebrow{
-                                                                                                                    color:var(--muted);
-                                                                                                                    margin-bottom:12px}
-                                                                                                                    .category-pills{
-                                                                                                                      gap:8px;
-                                                                                                                      margin-bottom:26px}
-                                                                                                                      .category-pills .btn{
-                                                                                                                        border-radius:30px;
-                                                                                                                        font-size:.8rem;
-                                                                                                                        padding:8px 18px}
-                                                                                                                        .category-pills .active{
-                                                                                                                          background:var(--ink);
-                                                                                                                          color:#fff}
-                                                                                                                          .manifesto{
-                                                                                                                            background:var(--ink);
-                                                                                                                            color:var(--paper);
-                                                                                                                            border-radius:10px;
-                                                                                                                            padding:48px}
-                                                                                                                            .manifesto p{
-                                                                                                                              color:#c5c8bd;
-                                                                                                                              max-width:420px}
-                                                                                                                              .manifesto .eyebrow{
-                                                                                                                                color:#e9a58d}
-                                                                                                                                .sound-lines{
-                                                                                                                                  height:90px;
-                                                                                                                                  display:flex;
-                                                                                                                                  align-items:center;
-                                                                                                                                  gap:8px;
-                                                                                                                                  justify-content:center}
-                                                                                                                                  .sound-lines i{
-                                                                                                                                    display:block;
-                                                                                                                                    width:6px;
-                                                                                                                                    background:#db754d;
-                                                                                                                                    border-radius:8px;
-                                                                                                                                    height:var(--height)}
-                                                                                                                                    /* 4. Карточки и каталог. Геометрия колонок задаётся Bootstrap. */
-                                                                                                                                    .product-card{
-                                                                                                                                      --bs-card-bg:transparent;
-                                                                                                                                      border:0;
-                                                                                                                                      height:100%}
-                                                                                                                                      .product-image{
-                                                                                                                                        position:relative;
-                                                                                                                                        display:block;
-                                                                                                                                        background:#eaeae6;
-                                                                                                                                        border-radius:9px;
-                                                                                                                                        overflow:hidden;
-                                                                                                                                        aspect-ratio:1.25}
-                                                                                                                                        .product-image img{
-                                                                                                                                          width:100%;
-                                                                                                                                          height:100%;
-                                                                                                                                          object-fit:cover;
-                                                                                                                                          transition:transform .3s}
-                                                                                                                                          .product-image:hover img{
-                                                                                                                                            transform:scale(1.035)}
-                                                                                                                                            .product-badge{
-                                                                                                                                              position:absolute;
-                                                                                                                                              top:15px;
-                                                                                                                                              left:15px;
-                                                                                                                                              background:#fff;
-                                                                                                                                              color:var(--ink);
-                                                                                                                                              border-radius:4px;
-                                                                                                                                              font-size:.65rem;
-                                                                                                                                              padding:6px 9px;
-                                                                                                                                              font-weight:600}
-                                                                                                                                              .card-body{
-                                                                                                                                                padding:20px 0 0}
-                                                                                                                                                .product-card .card-title{
-                                                                                                                                                  font-size:1.35rem;
-                                                                                                                                                  letter-spacing:-.035em;
-                                                                                                                                                  margin:5px 0 8px}
-                                                                                                                                                  .product-card .card-title a{
-                                                                                                                                                    text-decoration:none}
-                                                                                                                                                    .product-card .card-text{
-                                                                                                                                                      font-size:.8rem;
-                                                                                                                                                      color:var(--muted)}
-                                                                                                                                                      .product-price{
-                                                                                                                                                        font-size:1.1rem;
-                                                                                                                                                        white-space:nowrap}
-                                                                                                                                                        .add-button{
-                                                                                                                                                          height:40px;
-                                                                                                                                                          width:40px;
-                                                                                                                                                          padding:0;
-                                                                                                                                                          border-radius:50%;
-                                                                                                                                                          display:inline-flex;
-                                                                                                                                                          align-items:center;
-                                                                                                                                                          justify-content:center}
-                                                                                                                                                          .catalog-intro{
-                                                                                                                                                            max-width:560px}
-                                                                                                                                                            .filter-panel{
-                                                                                                                                                              border-top:1px solid var(--line);
-                                                                                                                                                              padding-top:22px}
-                                                                                                                                                              .filter-panel legend{
-                                                                                                                                                                font-size:.85rem;
-                                                                                                                                                                font-weight:600;
-                                                                                                                                                                margin-bottom:15px}
-                                                                                                                                                                .filter-panel .form-check{
-                                                                                                                                                                  font-size:.85rem;
-                                                                                                                                                                  margin-bottom:12px}
-                                                                                                                                                                  .catalog-toolbar{
-                                                                                                                                                                    border-bottom:1px solid var(--line);
-                                                                                                                                                                    padding-bottom:18px;
-                                                                                                                                                                    margin-bottom:24px}
-                                                                                                                                                                    .catalog-toolbar .form-select{
-                                                                                                                                                                      width:auto;
-                                                                                                                                                                      font-size:.8rem;
-                                                                                                                                                                      background-color:transparent}
-                                                                                                                                                                      .catalog-count{
-                                                                                                                                                                        font-size:.8rem;
-                                                                                                                                                                        color:var(--muted)}
-                                                                                                                                                                        .empty-state{
-                                                                                                                                                                          padding:50px 20px;
-                                                                                                                                                                          text-align:center;
-                                                                                                                                                                          background:#eaece5;
-                                                                                                                                                                          border-radius:8px}
-                                                                                                                                                                          .empty-state h2{
-                                                                                                                                                                            font-size:1.6rem}
-                                                                                                                                                                            /* 5. Товар, таблицы и заказ. */
-                                                                                                                                                                            .detail-photo{
-                                                                                                                                                                              width:100%;
-                                                                                                                                                                              aspect-ratio:1/1;
-                                                                                                                                                                              object-fit:cover;
-                                                                                                                                                                              border-radius:10px}
-                                                                                                                                                                              .availability{
-                                                                                                                                                                                font-size:.75rem;
-                                                                                                                                                                                color:#3f624a}
-                                                                                                                                                                                .detail-price{
-                                                                                                                                                                                  font-size:2rem;
-                                                                                                                                                                                  font-weight:600;
-                                                                                                                                                                                  letter-spacing:-.03em}
-                                                                                                                                                                                  .detail-description{
-                                                                                                                                                                                    color:var(--muted);
-                                                                                                                                                                                    max-width:440px}
-                                                                                                                                                                                    .detail-points{
-                                                                                                                                                                                      padding:0;
-                                                                                                                                                                                      list-style:none;
-                                                                                                                                                                                      font-size:.85rem}
-                                                                                                                                                                                      .detail-points li{
-                                                                                                                                                                                        padding:10px 0;
-                                                                                                                                                                                        border-bottom:1px solid var(--line)}
-                                                                                                                                                                                        .table{
-                                                                                                                                                                                          --bs-table-bg:transparent;
-                                                                                                                                                                                          font-size:.9rem}
-                                                                                                                                                                                          .table th{
-                                                                                                                                                                                            font-weight:500;
-                                                                                                                                                                                            color:var(--muted);
-                                                                                                                                                                                            width:48%}
-                                                                                                                                                                                            .table td,.table th{
-                                                                                                                                                                                              padding:15px 0}
-                                                                                                                                                                                              .accordion{
-                                                                                                                                                                                                --bs-accordion-bg:transparent;
-                                                                                                                                                                                                --bs-accordion-active-bg:#e9eae3;
-                                                                                                                                                                                                --bs-accordion-active-color:var(--ink);
-                                                                                                                                                                                                --bs-accordion-btn-focus-box-shadow:0 0 0 .2rem #c7462220}
-                                                                                                                                                                                                .accordion-button{
-                                                                                                                                                                                                  font-weight:600}
-                                                                                                                                                                                                  .checkout-panel{
-                                                                                                                                                                                                    background:#eeefe8;
-                                                                                                                                                                                                    border:1px solid var(--line);
-                                                                                                                                                                                                    border-radius:10px;
-                                                                                                                                                                                                    padding:28px}
-                                                                                                                                                                                                    .checkout-panel h2,.form-section-title{
-                                                                                                                                                                                                      font-size:1.3rem;
-                                                                                                                                                                                                      letter-spacing:-.03em}
-                                                                                                                                                                                                      .order-item{
-                                                                                                                                                                                                        padding:20px 0;
-                                                                                                                                                                                                        border-bottom:1px solid #d7d9d0}
-                                                                                                                                                                                                        .order-item img{
-                                                                                                                                                                                                          width:68px;
-                                                                                                                                                                                                          height:68px;
-                                                                                                                                                                                                          object-fit:cover;
-                                                                                                                                                                                                          border-radius:5px}
-                                                                                                                                                                                                          .quantity-control{
-                                                                                                                                                                                                            display:flex;
-                                                                                                                                                                                                            align-items:center;
-                                                                                                                                                                                                            gap:12px}
-                                                                                                                                                                                                            .quantity-control button{
-                                                                                                                                                                                                              padding:1px 9px;
-                                                                                                                                                                                                              min-width:30px}
-                                                                                                                                                                                                              .remove-item{
-                                                                                                                                                                                                                border:0;
-                                                                                                                                                                                                                background:none;
-                                                                                                                                                                                                                font-size:.72rem;
-                                                                                                                                                                                                                text-decoration:underline;
-                                                                                                                                                                                                                padding:0;
-                                                                                                                                                                                                                color:var(--muted)}
-                                                                                                                                                                                                                .order-note{
-                                                                                                                                                                                                                  font-size:.75rem;
-                                                                                                                                                                                                                  color:var(--muted)}
-                                                                                                                                                                                                                  .step-label{
-                                                                                                                                                                                                                    display:inline-flex;
-                                                                                                                                                                                                                    border:1px solid var(--line);
-                                                                                                                                                                                                                    border-radius:50%;
-                                                                                                                                                                                                                    width:28px;
-                                                                                                                                                                                                                    height:28px;
-                                                                                                                                                                                                                    justify-content:center;
-                                                                                                                                                                                                                    align-items:center;
-                                                                                                                                                                                                                    margin-right:10px;
-                                                                                                                                                                                                                    font-size:.8rem}
-                                                                                                                                                                                                                    .modal-content{
-                                                                                                                                                                                                                      background:var(--paper);
-                                                                                                                                                                                                                      border:0;
-                                                                                                                                                                                                                      border-radius:12px}
-                                                                                                                                                                                                                      .modal-title{
-                                                                                                                                                                                                                        font-size:1.7rem}
-                                                                                                                                                                                                                        .success-symbol{
-                                                                                                                                                                                                                          display:inline-flex;
-                                                                                                                                                                                                                          width:52px;
-                                                                                                                                                                                                                          height:52px;
-                                                                                                                                                                                                                          background:#e0eadc;
-                                                                                                                                                                                                                          color:#406344;
-                                                                                                                                                                                                                          align-items:center;
-                                                                                                                                                                                                                          justify-content:center;
-                                                                                                                                                                                                                          border-radius:50%;
-                                                                                                                                                                                                                          font-size:1.8rem;
-                                                                                                                                                                                                                          margin-bottom:18px}
-                                                                                                                                                                                                                          .toast{
-                                                                                                                                                                                                                            background:var(--ink);
-                                                                                                                                                                                                                            color:white;
-                                                                                                                                                                                                                            border:0}
-                                                                                                                                                                                                                            .contact-card{
-                                                                                                                                                                                                                              height:100%;
-                                                                                                                                                                                                                              border:1px solid var(--line);
-                                                                                                                                                                                                                              padding:28px;
-                                                                                                                                                                                                                              border-radius:8px}
-                                                                                                                                                                                                                              .contact-card h2{
-                                                                                                                                                                                                                                font-size:1.4rem}
-                                                                                                                                                                                                                                /* 6. Адаптивность и предпочтения пользователя. */
-                                                                                                                                                                                                                                @media(min-width:1400px){
-                                                                                                                                                                                                                                  .container{
-                                                                                                                                                                                                                                    max-width:1200px}
-                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                  @media(max-width:991.98px){
-                                                                                                                                                                                                                                    .navbar-nav{
-                                                                                                                                                                                                                                      gap:5px;
-                                                                                                                                                                                                                                      padding:15px 0}
-                                                                                                                                                                                                                                      .navbar-collapse .cart-link{
-                                                                                                                                                                                                                                        padding-bottom:15px}
-                                                                                                                                                                                                                                        .navbar{
-                                                                                                                                                                                                                                          min-height:80px}
-                                                                                                                                                                                                                                          .hero-copy{
-                                                                                                                                                                                                                                            padding:38px 30px}
-                                                                                                                                                                                                                                            .hero-visual{
-                                                                                                                                                                                                                                              min-height:420px}
-                                                                                                                                                                                                                                              .section-space{
-                                                                                                                                                                                                                                                padding-block:55px}
-                                                                                                                                                                                                                                                .manifesto{
-                                                                                                                                                                                                                                                  padding:30px}
-                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                @media(max-width:575.98px){
-                                                                                                                                                                                                                                                  .hero{
-                                                                                                                                                                                                                                                    padding-top:20px}
-                                                                                                                                                                                                                                                    .hero-copy{
-                                                                                                                                                                                                                                                      padding:32px 24px 20px}
-                                                                                                                                                                                                                                                      .hero h1{
-                                                                                                                                                                                                                                                        font-size:3.3rem}
-                                                                                                                                                                                                                                                        .hero-visual{
-                                                                                                                                                                                                                                                          min-height:300px}
-                                                                                                                                                                                                                                                          .hero-caption{
-                                                                                                                                                                                                                                                            left:16px;
-                                                                                                                                                                                                                                                            right:16px;
-                                                                                                                                                                                                                                                            bottom:16px}
-                                                                                                                                                                                                                                                            .benefits{
-                                                                                                                                                                                                                                                              padding:20px 0}
-                                                                                                                                                                                                                                                              .benefit{
-                                                                                                                                                                                                                                                                font-size:.72rem;
-                                                                                                                                                                                                                                                                gap:9px}
-                                                                                                                                                                                                                                                                .section-space{
-                                                                                                                                                                                                                                                                  padding-block:42px}
-                                                                                                                                                                                                                                                                  .product-image{
-                                                                                                                                                                                                                                                                    aspect-ratio:1.3}
-                                                                                                                                                                                                                                                                    .section-heading{
-                                                                                                                                                                                                                                                                      align-items:start!important;
-                                                                                                                                                                                                                                                                      gap:15px}
-                                                                                                                                                                                                                                                                      .section-heading .btn{
-                                                                                                                                                                                                                                                                        padding:8px 12px;
-                                                                                                                                                                                                                                                                        font-size:.75rem}
-                                                                                                                                                                                                                                                                        .checkout-panel{
-                                                                                                                                                                                                                                                                          padding:20px}
-                                                                                                                                                                                                                                                                          .breadcrumb{
-                                                                                                                                                                                                                                                                            margin-bottom:24px}
-                                                                                                                                                                                                                                                                            .announcement{
-                                                                                                                                                                                                                                                                              font-size:.62rem}
-                                                                                                                                                                                                                                                                              .manifesto{
-                                                                                                                                                                                                                                                                                padding:26px}
-                                                                                                                                                                                                                                                                                .catalog-toolbar{
-                                                                                                                                                                                                                                                                                  align-items:start!important;
-                                                                                                                                                                                                                                                                                  gap:12px;
-                                                                                                                                                                                                                                                                                  flex-direction:column}
-                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                @media(prefers-reduced-motion:reduce){
-                                                                                                                                                                                                                                                                                  *,*::before,*::after{
-                                                                                                                                                                                                                                                                                    scroll-behavior:auto!important;
-                                                                                                                                                                                                                                                                                    transition:none!important;
-                                                                                                                                                                                                                                                                                    animation:none!important}
-                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                  .navbar.container{
-                                                                                                                                                                                                                                                                                    padding-inline:12px}
+  --bs-body-font-family:Arial,Helvetica,sans-serif
+}
+body{
+  line-height:1.6
+}
+h1,h2,h3,h4{
+  line-height:1.1;
+  letter-spacing:-.045em
+}
+h1{
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  font-weight:600
+}
+h2{
+  font-size:clamp(2rem,3.4vw,3rem);
+  font-weight:500
+}
+a{
+  text-underline-offset:5px
+}
+button,a,input,select,textarea{
+  touch-action:manipulation
+}
+:focus-visible{
+  outline:3px solid var(--accent);
+  outline-offset:4px
+}
+.text-secondary{
+  color:var(--muted)!important
+}
+.eyebrow{
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-transform:uppercase
+}
+.section-space{
+  padding-block:76px
+}
+.btn{
+  padding:.8rem 1.3rem;
+  font-weight:600;
+  border-radius:6px
+}
+.btn-primary{
+  --bs-btn-bg:var(--accent);
+  --bs-btn-border-color:var(--accent);
+  --bs-btn-hover-bg:#a63719;
+  --bs-btn-hover-border-color:#a63719;
+  --bs-btn-active-bg:#923017;
+  --bs-btn-active-border-color:#923017;
+  --bs-btn-disabled-bg:var(--accent);
+  --bs-btn-disabled-border-color:var(--accent);
+  --bs-btn-focus-shadow-rgb:199,70,34
+}
+.btn-dark{
+  --bs-btn-bg:var(--ink);
+  --bs-btn-border-color:var(--ink)
+}
+.btn-outline-dark{
+  --bs-btn-color:var(--ink);
+  --bs-btn-border-color:#b9bcb2
+}
+.btn-sm{
+  padding:.48rem .85rem
+}
+.form-control,.form-select{
+  padding:.8rem 1rem;
+  background-color:#fff;
+  border-radius:6px
+}
+.form-control:focus,.form-select:focus,.form-check-input:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 .2rem #c7462220
+}
+.form-check-input:checked{
+  background-color:var(--accent);
+  border-color:var(--accent)
+}
+.form-label{
+  font-size:.85rem;
+  font-weight:600
+}
+.skip-link{
+  position:absolute;
+  top:-80px;
+  left:20px;
+  z-index:1100;
+  padding:10px;
+  background:white
+}
+.skip-link:focus{
+  top:8px
+}
+.arrow{
+  margin-left:1.6rem
+}
+.icon{
+  width:21px;
+  height:21px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  vertical-align:middle;
+  flex-shrink:0
+}
+/* 2. Общая навигация и подвал. */
+.announcement{
+  background:var(--ink);
+  color:#f5f5ed;
+  text-align:center;
+  font-size:.7rem;
+  letter-spacing:.07em;
+  padding:9px 12px
+}
+.site-header{
+  border-bottom:1px solid var(--line)
+}
+.navbar{
+  min-height:94px
+}
+.navbar-brand,.footer-brand{
+  font-size:2.35rem;
+  font-weight:800;
+  letter-spacing:-.09em;
+  line-height:1;
+  color:var(--ink)
+}
+.brand-dot{
+  color:var(--accent)
+}
+.navbar-nav{
+  gap:26px
+}
+.navbar .nav-link{
+  font-size:.87rem;
+  color:var(--muted);
+  padding-block:10px
+}
+.navbar .nav-link.active{
+  color:var(--ink);
+  text-decoration:underline;
+  text-decoration-color:var(--accent);
+  text-decoration-thickness:2px;
+  text-underline-offset:9px
+}
+.cart-link{
+  display:flex;
+  gap:9px;
+  align-items:center;
+  font-size:.85rem;
+  text-decoration:none
+}
+.cart-count{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:50%;
+  background:var(--ink);
+  color:white;
+  font-size:.7rem;
+  min-width:23px;
+  height:23px
+}
+.navbar-toggler{
+  border:0;
+  padding:8px
+}
+.site-footer{
+  border-top:1px solid var(--line);
+  padding:42px 0 22px
+}
+.site-footer a{
+  color:inherit
+}
+.footer-bottom{
+  border-top:1px solid var(--line);
+  padding-top:20px;
+  margin-top:35px;
+  font-size:.72rem;
+  color:var(--muted)
+}
+.breadcrumb{
+  font-size:.78rem;
+  padding-top:28px;
+  margin-bottom:36px
+}
+.breadcrumb a{
+  color:var(--muted);
+  text-decoration:none
+}
+.breadcrumb-item.active{
+  color:var(--ink)
+}
+/* 3. Главная страница. */
+.hero{
+  padding-top:42px
+}
+.hero-panel{
+  background:#e9eae3;
+  border-radius:12px;
+  overflow:hidden
+}
+.hero-copy{
+  padding:55px 0 55px 48px
+}
+.hero h1{
+  font-size:clamp(3.1rem,4.5vw,4rem);
+  line-height:1.02;
+  margin:28px 0 24px;
+  letter-spacing:-.065em
+}
+.hero h1 span{
+  color:var(--accent)
+}
+.hero-copy p{
+  max-width:320px;
+  font-size:.95rem;
+  color:var(--muted)
+}
+.hero-note{
+  font-size:.71rem!important;
+  margin-top:28px;
+  margin-bottom:0
+}
+.hero-visual{
+  position:relative;
+  min-height:490px;
+  height:100%;
+  background:#e9eae3
+}
+.hero-visual img{
+  width:100%;
+  height:100%;
+  position:absolute;
+  object-fit:cover;
+  mix-blend-mode:multiply
+}
+.hero-caption{
+  position:absolute;
+  bottom:22px;
+  left:26px;
+  right:26px;
+  background:#ffffffdc;
+  backdrop-filter:blur(10px);
+  padding:16px 20px;
+  border:1px solid #fff;
+  border-radius:7px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-size:.82rem;
+  text-decoration:none
+}
+.hero-caption strong{
+  display:block;
+  font-size:1rem
+}
+.small-label{
+  font-size:.7rem;
+  color:var(--muted)
+}
+.benefits{
+  padding:26px 0;
+  border-bottom:1px solid var(--line)
+}
+.benefit{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  font-size:.8rem
+}
+.benefit .icon{
+  color:var(--accent)
+}
+.section-heading{
+  margin-bottom:30px
+}
+.section-heading .eyebrow{
+  color:var(--muted);
+  margin-bottom:12px
+}
+.category-pills{
+  gap:8px;
+  margin-bottom:26px
+}
+.category-pills .btn{
+  border-radius:30px;
+  font-size:.8rem;
+  padding:8px 18px
+}
+.category-pills .active{
+  background:var(--ink);
+  color:#fff
+}
+.manifesto{
+  background:var(--ink);
+  color:var(--paper);
+  border-radius:10px;
+  padding:48px
+}
+.manifesto p{
+  color:#c5c8bd;
+  max-width:420px
+}
+.manifesto .eyebrow{
+  color:#e9a58d
+}
+.sound-lines{
+  height:90px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  justify-content:center
+}
+.sound-lines i{
+  display:block;
+  width:6px;
+  background:#db754d;
+  border-radius:8px;
+  height:var(--height)
+}
+/* 4. Карточки и каталог. Геометрия колонок задаётся Bootstrap. */
+.product-card{
+  --bs-card-bg:transparent;
+  border:0;
+  height:100%
+}
+.product-image{
+  position:relative;
+  display:block;
+  background:#eaeae6;
+  border-radius:9px;
+  overflow:hidden;
+  aspect-ratio:1.25
+}
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .3s
+}
+.product-image:hover img{
+  transform:scale(1.035)
+}
+.product-badge{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:#fff;
+  color:var(--ink);
+  border-radius:4px;
+  font-size:.65rem;
+  padding:6px 9px;
+  font-weight:600
+}
+.card-body{
+  padding:20px 0 0
+}
+.product-card .card-title{
+  font-size:1.35rem;
+  letter-spacing:-.035em;
+  margin:5px 0 8px
+}
+.product-card .card-title a{
+  text-decoration:none
+}
+.product-card .card-text{
+  font-size:.8rem;
+  color:var(--muted)
+}
+.product-price{
+  font-size:1.1rem;
+  white-space:nowrap
+}
+.add-button{
+  height:40px;
+  width:40px;
+  padding:0;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center
+}
+.catalog-intro{
+  max-width:560px
+}
+.filter-panel{
+  border-top:1px solid var(--line);
+  padding-top:22px
+}
+.filter-panel legend{
+  font-size:.85rem;
+  font-weight:600;
+  margin-bottom:15px
+}
+.filter-panel .form-check{
+  font-size:.85rem;
+  margin-bottom:12px
+}
+.catalog-toolbar{
+  border-bottom:1px solid var(--line);
+  padding-bottom:18px;
+  margin-bottom:24px
+}
+.catalog-toolbar .form-select{
+  width:auto;
+  font-size:.8rem;
+  background-color:transparent
+}
+.catalog-count{
+  font-size:.8rem;
+  color:var(--muted)
+}
+.empty-state{
+  padding:50px 20px;
+  text-align:center;
+  background:#eaece5;
+  border-radius:8px
+}
+.empty-state h2{
+  font-size:1.6rem
+}
+/* 5. Товар, таблицы и заказ. */
+.detail-photo{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:10px
+}
+.availability{
+  font-size:.75rem;
+  color:#3f624a
+}
+.detail-price{
+  font-size:2rem;
+  font-weight:600;
+  letter-spacing:-.03em
+}
+.detail-description{
+  color:var(--muted);
+  max-width:440px
+}
+.detail-points{
+  padding:0;
+  list-style:none;
+  font-size:.85rem
+}
+.detail-points li{
+  padding:10px 0;
+  border-bottom:1px solid var(--line)
+}
+.table{
+  --bs-table-bg:transparent;
+  font-size:.9rem
+}
+.table th{
+  font-weight:500;
+  color:var(--muted);
+  width:48%
+}
+.table td,.table th{
+  padding:15px 0
+}
+.accordion{
+  --bs-accordion-bg:transparent;
+  --bs-accordion-active-bg:#e9eae3;
+  --bs-accordion-active-color:var(--ink);
+  --bs-accordion-btn-focus-box-shadow:0 0 0 .2rem #c7462220
+}
+.accordion-button{
+  font-weight:600
+}
+.checkout-panel{
+  background:#eeefe8;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:28px
+}
+.checkout-panel h2,.form-section-title{
+  font-size:1.3rem;
+  letter-spacing:-.03em
+}
+.order-item{
+  padding:20px 0;
+  border-bottom:1px solid #d7d9d0
+}
+.order-item img{
+  width:68px;
+  height:68px;
+  object-fit:cover;
+  border-radius:5px
+}
+.quantity-control{
+  display:flex;
+  align-items:center;
+  gap:12px
+}
+.quantity-control button{
+  padding:1px 9px;
+  min-width:30px
+}
+.remove-item{
+  border:0;
+  background:none;
+  font-size:.72rem;
+  text-decoration:underline;
+  padding:0;
+  color:var(--muted)
+}
+.order-note{
+  font-size:.75rem;
+  color:var(--muted)
+}
+.step-label{
+  display:inline-flex;
+  border:1px solid var(--line);
+  border-radius:50%;
+  width:28px;
+  height:28px;
+  justify-content:center;
+  align-items:center;
+  margin-right:10px;
+  font-size:.8rem
+}
+.modal-content{
+  background:var(--paper);
+  border:0;
+  border-radius:12px
+}
+.modal-title{
+  font-size:1.7rem
+}
+.success-symbol{
+  display:inline-flex;
+  width:52px;
+  height:52px;
+  background:#e0eadc;
+  color:#406344;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-size:1.8rem;
+  margin-bottom:18px
+}
+.toast{
+  background:var(--ink);
+  color:white;
+  border:0
+}
+.contact-card{
+  height:100%;
+  border:1px solid var(--line);
+  padding:28px;
+  border-radius:8px
+}
+.contact-card h2{
+  font-size:1.4rem
+}
+/* 6. Адаптивность и предпочтения пользователя. */
+@media(min-width:1400px){
+  .container{
+    max-width:1200px
+  }
+}
+@media(max-width:991.98px){
+  .navbar-nav{
+    gap:5px;
+    padding:15px 0
+  }
+  .navbar-collapse .cart-link{
+    padding-bottom:15px
+  }
+  .navbar{
+    min-height:80px
+  }
+  .hero-copy{
+    padding:38px 30px
+  }
+  .hero-visual{
+    min-height:420px
+  }
+  .section-space{
+    padding-block:55px
+  }
+  .manifesto{
+    padding:30px
+  }
+}
+@media(max-width:575.98px){
+  .hero{
+    padding-top:20px
+  }
+  .hero-copy{
+    padding:32px 24px 20px
+  }
+  .hero h1{
+    font-size:3.3rem
+  }
+  .hero-visual{
+    min-height:300px
+  }
+  .hero-caption{
+    left:16px;
+    right:16px;
+    bottom:16px
+  }
+  .benefits{
+    padding:20px 0
+  }
+  .benefit{
+    font-size:.72rem;
+    gap:9px
+  }
+  .section-space{
+    padding-block:42px
+  }
+  .product-image{
+    aspect-ratio:1.3
+  }
+  .section-heading{
+    align-items:start!important;
+    gap:15px
+  }
+  .section-heading .btn{
+    padding:8px 12px;
+    font-size:.75rem
+  }
+  .checkout-panel{
+    padding:20px
+  }
+  .breadcrumb{
+    margin-bottom:24px
+  }
+  .announcement{
+    font-size:.62rem
+  }
+  .manifesto{
+    padding:26px
+  }
+  .catalog-toolbar{
+    align-items:start!important;
+    gap:12px;
+    flex-direction:column
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important
+  }
+}
+.navbar.container{
+  padding-inline:12px
+}
+/* Карусель товаров: ручное перелистывание, клавиатура и свайпы Bootstrap. */
+.product-carousel {
+  outline-offset: 6px;
+}
+.carousel-product {
+  border: 1px solid var(--line);
+  background: #eeefe8;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.carousel-photo {
+  display: block;
+  position: relative;
+  height: 100%;
+  min-height: 410px;
+  overflow: hidden;
+}
+.carousel-photo img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+}
+.carousel-copy {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  min-height: 410px;
+}
+.carousel-copy h3 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  margin-bottom: 14px;
+}
+.carousel-copy h3 a {
+  text-decoration: none;
+}
+.carousel-tagline {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+.carousel-description {
+  font-size: .85rem;
+  max-width: 410px;
+}
+.carousel-price {
+  margin-top: auto;
+  padding-top: 8px;
+  font-size: 1.6rem;
+  letter-spacing: -.035em;
+}
+.carousel-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+.carousel-status {
+  font-size: .8rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+.product-carousel .carousel-indicators {
+  position: static;
+  margin: 0;
+  gap: 7px;
+}
+.product-carousel .carousel-indicators [data-bs-target] {
+  width: 32px;
+  height: 5px;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  margin: 0;
+  background-color: var(--ink);
+  opacity: .25;
+}
+.product-carousel .carousel-indicators .active {
+  background-color: var(--accent);
+  opacity: 1;
+}
+.carousel-arrow {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 1.25rem;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 767.98px) {
+  .carousel-photo {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 1.4;
+  }
+  .carousel-copy {
+    min-height: 370px;
+    padding: 26px;
+  }
+  .carousel-copy .btn {
+    padding: .7rem 1rem;
+  }
+  .carousel-description {
+    min-height: 5em;
+  }
+}
+@media (max-width: 359.98px) {
+  .carousel-copy {
+    padding: 20px;
+    min-height: 395px;
+  }
+  .carousel-toolbar {
+    gap: 8px;
+  }
+  .product-carousel .carousel-indicators [data-bs-target] {
+    width: 24px;
+  }
+}

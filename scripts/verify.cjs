@@ -5,7 +5,7 @@ const fs=require('node:fs');
 const browser=await chromium.launch({headless:true,channel:process.env.PLAYWRIGHT_CHANNEL});
 const page=await browser.newPage({viewport:{width:1440,height:1000}});
 const errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`)});
-const base='http://127.0.0.1:4173/';
+const base=process.env.SHOP_BASE_URL || 'http://127.0.0.1:4173/';
 fs.mkdirSync('.artifacts',{recursive:true});
 for(const width of [1440,768,390,320]){
  await page.setViewportSize({width,height:1000});
@@ -19,6 +19,20 @@ for(const width of [1440,768,390,320]){
   if(width===1440||width===390) await page.screenshot({path:`.artifacts/bootstrap-${file.split('.')[0]}-${width}.png`,fullPage:true});
  }
 }
+await page.setViewportSize({width:1440,height:1000});await page.goto(base);
+const activeSlide = () => page.locator('#product-carousel .carousel-item.active');
+const waitSlide = name => page.waitForFunction(name => document.querySelector('#product-carousel .carousel-item.active h3')?.textContent === name && !document.querySelector('#product-carousel .carousel-item-next, #product-carousel .carousel-item-prev'), name);
+await page.getByRole('button',{name:'Следующий товар',exact:true}).click();await waitSlide('Air 02');
+await page.getByRole('button',{name:'Следующий товар',exact:true}).click();await waitSlide('Move 03');
+await page.getByRole('button',{name:'Следующий товар',exact:true}).click();await waitSlide('Studio 01');
+await page.getByRole('button',{name:'Предыдущий товар',exact:true}).click();await waitSlide('Move 03');
+await page.getByRole('button',{name:'Показать Air 02',exact:true}).click();await waitSlide('Air 02');
+assert.equal(await page.locator('#carousel-status').innerText(),'02 / 03');
+assert.equal(await page.locator('#product-carousel .carousel-item[inert]').count(),2);
+await page.locator('#product-carousel').focus();await page.keyboard.press('ArrowRight');await waitSlide('Move 03');
+await activeSlide().getByRole('button',{name:'Добавить Move 03 в корзину'}).click();
+await page.locator('.cart-link').click();assert.equal(await page.locator('.order-item').count(),1);assert.match(await page.locator('#order-items').innerText(),/Move 03/);
+await page.getByRole('button',{name:'Удалить Move 03'}).click();
 await page.setViewportSize({width:390,height:844});await page.goto(base);
 await page.getByRole('button',{name:'Открыть меню'}).click();
 await page.locator('#main-nav').waitFor({state:'visible'});assert.equal(await page.getByRole('button',{name:'Открыть меню'}).getAttribute('aria-expanded'),'true');
@@ -54,7 +68,32 @@ await page.getByRole('button',{name:'Как работает гарантия?'}
 await page.getByRole('button',{name:'Добавить в корзину'}).click();await page.goto(base+'order.html');await page.getByRole('button',{name:'Удалить Studio 01'}).click();assert(await page.locator('#empty-cart').isVisible());
 await page.goto(base+'contacts.html');await page.getByRole('button',{name:'Отправить учебный вопрос'}).click();assert(await page.locator('#contact-name').evaluate(e=>!e.validity.valid));
 await page.getByLabel('Имя *',{exact:true}).fill('Тест');await page.getByLabel('Email *',{exact:true}).fill('test@example.com');await page.getByLabel('Ваш вопрос *').fill('Помогите выбрать наушники');await page.getByRole('button',{name:'Отправить учебный вопрос'}).click();assert(await page.locator('#contact-success').isVisible());
-await page.goto(base);await page.evaluate(()=>localStorage.setItem('ritm-cart-v1','{"studio":-1,"air":200,"bad":3}'));await page.reload();assert.equal(await page.locator('[data-cart-count]').innerText(),'99');await page.evaluate(()=>localStorage.removeItem('ritm-cart-v1'));
-await page.reload();await page.screenshot({path:'.artifacts/preview.jpg',type:'jpeg',quality:85});
-assert.deepEqual(errors,[]);await browser.close();console.log('PASS: five pages at 1440/768/390/320px, images, Bootstrap 5.3.8, navigation, filters/search/sort, invalid products, persistent cart, quantities/deletion, shipping thresholds, checkout validation/success, contacts, modal, accordion, corrupt storage. No page errors or failed assets.');
+await page.evaluate(()=>{localStorage.removeItem('ritm-cart-v1');sessionStorage.removeItem('ritm-cart-v1');});
+await page.goto(base);await page.evaluate(()=>localStorage.setItem('ritm-cart-v1','{"studio":-1,"air":200,"bad":3}'));await page.reload();assert.equal(await page.locator('[data-cart-count]').innerText(),'99');
+await page.evaluate(()=>{localStorage.removeItem('ritm-cart-v1');sessionStorage.removeItem('ritm-cart-v1');});
+await page.goto(base);await page.screenshot({path:'.artifacts/preview.jpg',type:'jpeg',quality:85});
+// Возврат страницы из back/forward cache должен обновлять уже нарисованную корзину.
+await page.goto(base+'order.html');
+await page.evaluate(()=>{localStorage.setItem('ritm-cart-v1',JSON.stringify({studio:2,_updatedAt:Date.now()}));window.dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true}));});
+assert.equal(await page.locator('[data-cart-count]').innerText(),'2');assert.equal(await page.locator('.order-item').count(),1);assert(await page.locator('#checkout-content').isVisible());
+await page.getByRole('button',{name:'Удалить Studio 01'}).click();
+// При запрете обоих хранилищ товар переносится ссылкой, а заказ остаётся доступным.
+const restricted=await browser.newContext();
+await restricted.addInitScript(()=>{Storage.prototype.getItem=()=>{throw new DOMException('Blocked','SecurityError')};Storage.prototype.setItem=()=>{throw new DOMException('Blocked','SecurityError')};});
+const limited=await restricted.newPage();
+await limited.goto(base);await limited.locator('.carousel-item.active [data-add]').click();await limited.locator('.cart-link').click();
+assert.equal(await limited.locator('.order-item').count(),1);assert(await limited.locator('#checkout-content').isVisible());
+await limited.reload();assert.equal(await limited.locator('.order-item').count(),1);
+await limited.getByLabel('Имя *',{exact:true}).fill('Тест');await limited.getByLabel('Телефон *').fill('+7 (900) 123-45-67');await limited.getByLabel('Email *',{exact:true}).fill('test@example.com');await limited.getByLabel('Способ получения').selectOption('pickup');await limited.locator('#order-agreement').check();await limited.getByRole('button',{name:'Оформить учебный заказ'}).click();await limited.locator('#success-modal').waitFor({state:'visible'});assert.equal(await limited.locator('[data-cart-count]').innerText(),'0');
+await limited.reload();assert(await limited.locator('#empty-cart').isVisible());await restricted.close();
+const touchContext=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+const touchPage=await touchContext.newPage();await touchPage.goto(base);
+await touchPage.locator('.carousel-photo').first().scrollIntoViewIfNeeded();
+const box=await touchPage.locator('.carousel-photo').first().boundingBox();const cdp=await touchContext.newCDPSession(touchPage);
+await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:box.x+box.width*.85,y:box.y+80}]});
+await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:box.x+box.width*.15,y:box.y+80}]});
+await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+await touchPage.waitForFunction(()=>document.querySelector('.carousel-item.active h3')?.textContent==='Air 02');
+await touchContext.close();
+assert.deepEqual(errors,[]);await browser.close();console.log('PASS: five responsive pages; carousel arrows, wrap, indicators, keyboard, touch swipe and purchase; persistent cart, blocked storage checkout, pageshow restore; filters, forms and Bootstrap components. No page errors or failed assets.');
 })().catch(e=>{console.error(e);process.exit(1)});
