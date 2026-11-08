@@ -1,0 +1,306 @@
+{
+  "base": "http://127.0.0.1:4173/",
+  "results": [
+    {
+      "name": "index",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "catalog",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "product",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "order",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "contacts",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "index",
+      "width": 360,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "catalog",
+      "width": 360,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "product",
+      "width": 360,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "order",
+      "width": 360,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "contacts",
+      "width": 360,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "index",
+      "width": 430,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "catalog",
+      "width": 430,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "product",
+      "width": 430,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "order",
+      "width": 430,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "contacts",
+      "width": 430,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "index",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "catalog",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "product",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "order",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "contacts",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "index",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "catalog",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "product",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "order",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "contacts",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "index",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "catalog",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "product",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "order",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    },
+    {
+      "name": "contacts",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "images": true,
+      "labels": true,
+      "styles": "css/style.css,css/responsive.css",
+      "viewport": "width=device-width, initial-scale=1"
+    }
+  ],
+  "scenarios": "filter, Escape/focus, product variants, form validation, no-JS navigation: PASS"
+}
