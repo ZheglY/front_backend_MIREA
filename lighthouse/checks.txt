@@ -1,0 +1,26 @@
+index 320px: PASS
+catalog 320px: PASS
+product 320px: PASS
+order 320px: PASS
+contacts 320px: PASS
+index 375px: PASS
+catalog 375px: PASS
+product 375px: PASS
+order 375px: PASS
+contacts 375px: PASS
+index 768px: PASS
+catalog 768px: PASS
+product 768px: PASS
+order 768px: PASS
+contacts 768px: PASS
+index 1024px: PASS
+catalog 1024px: PASS
+product 1024px: PASS
+order 1024px: PASS
+contacts 1024px: PASS
+index 1440px: PASS
+catalog 1440px: PASS
+product 1440px: PASS
+order 1440px: PASS
+contacts 1440px: PASS
+Filter and Escape: PASS

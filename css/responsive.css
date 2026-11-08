@@ -1,0 +1,6 @@
+/* Mobile first: базовая вёрстка — одна колонка. */
+@media(max-width:639px){.js nav{display:none;width:100%;flex-direction:column;gap:4px}.js nav.open{display:flex}.js .menu-toggle{display:block}nav a{padding:12px}.section-heading{align-items:flex-start;flex-direction:column}.hero-copy .text-link{margin-left:0}.hero-image img{max-height:410px}.benefits{flex-direction:column}.card-bottom{flex-wrap:wrap}th,td{overflow-wrap:anywhere}.section{padding:35px 0}}
+@media(min-width:640px){.menu-toggle{display:none}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1000px){.hero{grid-template-columns:1fr 1fr}.hero-copy{padding:55px 45px 55px 0}.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.product-layout{grid-template-columns:1fr 1fr;gap:60px}.hero-image{margin-top:30px;margin-bottom:30px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+@media(max-width:639px){.hero-copy .text-link{display:block;margin-top:20px}}
