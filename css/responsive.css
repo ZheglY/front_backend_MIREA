@@ -10,3 +10,5 @@
 @media(max-width:639px){.table-wrapper caption{display:block;width:100%;padding-bottom:8px}}
 @media(max-width:639px){.hero{gap:0}.hero-image{border-radius:130px 130px 12px 12px}.hero-image img{min-height:310px}.contact-form{padding:18px}.story{padding:40px 22px}header nav a:last-child{align-self:flex-start;margin-top:8px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+
+@media(min-width:1000px){.hero-copy{padding-top:40px;padding-bottom:40px}.hero-image{margin-top:40px;margin-bottom:40px}}
