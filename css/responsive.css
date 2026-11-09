@@ -8,3 +8,5 @@
 @media(min-width:1000px){.catalog-layout{grid-template-columns:230px minmax(0,1fr)}.catalog-layout .cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:639px){.table-wrapper table,.table-wrapper tbody{display:block}.table-wrapper tr{display:grid;grid-template-columns:1fr;margin:12px 0;border:1px solid var(--line)}.table-wrapper th,.table-wrapper td{display:block;border:0;padding:8px 14px}.table-wrapper th{background:#e5e8dc}}
 @media(max-width:639px){.table-wrapper caption{display:block;width:100%;padding-bottom:8px}}
+@media(max-width:639px){.hero{gap:0}.hero-image{border-radius:130px 130px 12px 12px}.hero-image img{min-height:310px}.contact-form{padding:18px}.story{padding:40px 22px}header nav a:last-child{align-self:flex-start;margin-top:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
