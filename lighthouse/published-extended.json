@@ -1,0 +1,206 @@
+{
+  "base": "https://zhegly.github.io/front_backend_MIREA/",
+  "sizes": [
+    {
+      "width": 360,
+      "name": "index",
+      "header": 310.5,
+      "main": 310.5,
+      "text": "16px",
+      "title": "40px"
+    },
+    {
+      "width": 360,
+      "name": "catalog",
+      "header": 310.5,
+      "main": 310.5,
+      "text": "16px",
+      "title": "40px"
+    },
+    {
+      "width": 360,
+      "name": "product",
+      "header": 310.5,
+      "main": 310.5,
+      "text": "16px",
+      "title": "40px"
+    },
+    {
+      "width": 360,
+      "name": "order",
+      "header": 310.5,
+      "main": 310.5,
+      "text": "16px",
+      "title": "40px"
+    },
+    {
+      "width": 360,
+      "name": "contacts",
+      "header": 310.5,
+      "main": 310.5,
+      "text": "16px",
+      "title": "40px"
+    },
+    {
+      "width": 430,
+      "name": "index",
+      "header": 373.5,
+      "main": 373.5,
+      "text": "16px",
+      "title": "40px"
+    },
+    {
+      "width": 430,
+      "name": "catalog",
+      "header": 373.5,
+      "main": 373.5,
+      "text": "16px",
+      "title": "40px"
+    },
+    {
+      "width": 430,
+      "name": "product",
+      "header": 373.5,
+      "main": 373.5,
+      "text": "16px",
+      "title": "40px"
+    },
+    {
+      "width": 430,
+      "name": "order",
+      "header": 373.5,
+      "main": 373.5,
+      "text": "16px",
+      "title": "40px"
+    },
+    {
+      "width": 430,
+      "name": "contacts",
+      "header": 373.5,
+      "main": 373.5,
+      "text": "16px",
+      "title": "40px"
+    },
+    {
+      "width": 768,
+      "name": "index",
+      "header": 677.6875,
+      "main": 677.6875,
+      "text": "16px",
+      "title": "40px"
+    },
+    {
+      "width": 768,
+      "name": "catalog",
+      "header": 677.6875,
+      "main": 677.6875,
+      "text": "16px",
+      "title": "40px"
+    },
+    {
+      "width": 768,
+      "name": "product",
+      "header": 677.6875,
+      "main": 677.6875,
+      "text": "16px",
+      "title": "40px"
+    },
+    {
+      "width": 768,
+      "name": "order",
+      "header": 677.6875,
+      "main": 677.6875,
+      "text": "16px",
+      "title": "40px"
+    },
+    {
+      "width": 768,
+      "name": "contacts",
+      "header": 677.6875,
+      "main": 677.6875,
+      "text": "16px",
+      "title": "40px"
+    },
+    {
+      "width": 1024,
+      "name": "index",
+      "header": 908.09375,
+      "main": 908.09375,
+      "text": "16px",
+      "title": "51.2px"
+    },
+    {
+      "width": 1024,
+      "name": "catalog",
+      "header": 908.09375,
+      "main": 908.09375,
+      "text": "16px",
+      "title": "51.2px"
+    },
+    {
+      "width": 1024,
+      "name": "product",
+      "header": 908.09375,
+      "main": 908.09375,
+      "text": "16px",
+      "title": "51.2px"
+    },
+    {
+      "width": 1024,
+      "name": "order",
+      "header": 908.09375,
+      "main": 908.09375,
+      "text": "16px",
+      "title": "51.2px"
+    },
+    {
+      "width": 1024,
+      "name": "contacts",
+      "header": 908.09375,
+      "main": 908.09375,
+      "text": "16px",
+      "title": "51.2px"
+    },
+    {
+      "width": 1440,
+      "name": "index",
+      "header": 1280,
+      "main": 1280,
+      "text": "16px",
+      "title": "68px"
+    },
+    {
+      "width": 1440,
+      "name": "catalog",
+      "header": 1280,
+      "main": 1280,
+      "text": "16px",
+      "title": "68px"
+    },
+    {
+      "width": 1440,
+      "name": "product",
+      "header": 1280,
+      "main": 1280,
+      "text": "16px",
+      "title": "68px"
+    },
+    {
+      "width": 1440,
+      "name": "order",
+      "header": 1280,
+      "main": 1280,
+      "text": "16px",
+      "title": "68px"
+    },
+    {
+      "width": 1440,
+      "name": "contacts",
+      "header": 1280,
+      "main": 1280,
+      "text": "16px",
+      "title": "68px"
+    }
+  ],
+  "forms": "PASS"
+}
